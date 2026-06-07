@@ -40,13 +40,15 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          git add public data/processed
+          git add public data/processed reports
 
           if git diff --cached --quiet; then
             echo "没有需要提交的生成结果。"
           else
             git commit -m "自动生成金属价格月报"
-            git pull --rebase origin main
+            # 推送前先 fetch + rebase，避免「remote contains work」冲突
+            git fetch origin main
+            git rebase origin/main
             git push origin main
           fi
 
