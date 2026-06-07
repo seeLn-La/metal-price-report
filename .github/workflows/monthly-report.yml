@@ -40,7 +40,13 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
+          # 暂存本地生成的文件，避免 pull 时冲突
+          git stash push -- public data/processed
+
           git pull --rebase origin main
+
+          # 恢复本地生成的文件
+          git stash pop || true
 
           git add public data/processed
 
