@@ -1,0 +1,6 @@
+pandas
+openpyxl
+matplotlib
+jinja2
+requests
+python-dotenv
