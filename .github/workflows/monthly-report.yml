@@ -35,17 +35,25 @@ jobs:
       - name: 生成报告
         run: python src/generate_report.py
 
+      - name: 提交生成结果
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git pull --rebase origin main
+
+          git add public data/processed
+
+          if git diff --cached --quiet; then
+            echo "没有需要提交的生成结果。"
+          else
+            git commit -m "自动生成金属价格月报"
+            git push origin main
+          fi
+
       - name: 发送 Bark 推送
         env:
           BARK_KEY: ${{ secrets.BARK_KEY }}
           BARK_BASE_URL: ${{ secrets.BARK_BASE_URL }}
           REPORT_URL: ${{ secrets.REPORT_URL }}
         run: python src/notify_bark.py
-
-      - name: 提交生成结果
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add public data/processed
-          git diff --cached --quiet || git commit -m "自动生成金属价格月报"
-          git push
