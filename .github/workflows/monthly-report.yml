@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pages: write
 
     steps:
       - name: 检出代码
@@ -51,6 +52,14 @@ jobs:
             git rebase origin/main
             git push origin main
           fi
+
+      - name: 部署到 GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          commit_message: "部署：自动生成金属价格月报"
 
       - name: 发送 Bark 推送
         env:
