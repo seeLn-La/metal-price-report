@@ -36,14 +36,36 @@ METAL_COLORS = {
 UP_COLOR   = "#E53E3E"   # 红色
 DOWN_COLOR = "#38A169"   # 绿色
 
-# ── 中文字体设置 ──
-for font_name in ["Lantinghei SC", "Heiti TC", "PingFang HK", "STHeiti"]:
+# ── 中文字体设置（兼容 macOS 和 Ubuntu） ──
+CJK_FONT_CANDIDATES = [
+    # macOS 字体
+    "Lantinghei SC",
+    "Heiti TC",
+    "PingFang HK",
+    "STHeiti",
+    # Ubuntu / Linux 字体
+    "WenQuanYi Zen Hei",
+    "WenQuanYi Micro Hei",
+    "Noto Sans CJK SC",
+    "Noto Sans CJK",
+    "Noto Sans SC",
+    "DejaVu Sans",
+]
+_font_found = False
+for font_name in CJK_FONT_CANDIDATES:
     try:
         matplotlib.font_manager.findfont(font_name, fallback_to_default=False)
         plt.rcParams["font.family"] = font_name
+        _font_found = True
         break
     except Exception:
         continue
+
+if not _font_found:
+    # 最后兜底：不指定字体，让 matplotlib 用默认字体 + 删除字体缓存
+    print("[WARN] 未找到中文字体，图表中文可能显示为方框。")
+    print("[WARN] 请安装中文字体：sudo apt install fonts-wqy-zenhei")
+
 plt.rcParams["axes.unicode_minus"] = False
 
 
