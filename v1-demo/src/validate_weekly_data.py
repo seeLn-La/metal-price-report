@@ -39,6 +39,8 @@ def main() -> int:
     latest_date = pd.to_datetime(df["week_end"]).max().date()
     today = datetime.now(timezone.utc).date()
     checks.append(check("最新数据未过期", (today - latest_date).days <= 7, f"最新周末：{latest_date.isoformat()}，当前日期：{today.isoformat()}"))
+    latest_start = pd.to_datetime(latest["week_start"]).min().date()
+    checks.append(check("本周起止日期完整", latest_start <= latest_date, f"本周区间：{latest_start.isoformat()} 至 {latest_date.isoformat()}"))
 
     conversion_failures = []
     for metal, group in df.dropna(subset=["native_last_close", "usd_cny", "price_cny"]).iterrows():
@@ -89,6 +91,7 @@ def main() -> int:
             "源字段和人民币单位检查",
             "正数与完整性检查",
             "最新数据新鲜度检查",
+            "本周起止日期检查",
             "人民币换算公式逐行复算",
             "锡的 SHFE 官方来源检查",
             "周涨跌公式复算",

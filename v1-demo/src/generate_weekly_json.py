@@ -54,6 +54,7 @@ def main() -> int:
         trend[metal] = [
             {
                 "week_end": row["week_end"],
+                "week_start": row["week_start"],
                 "price": clean_number(row["price_cny"]),
                 "unit": row["display_unit"],
                 "weekly_change_pct": clean_number(row["weekly_change_cny_pct"]),
@@ -67,6 +68,7 @@ def main() -> int:
         "language": "zh-CN",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "week_end": latest_week,
+        "week_start": str(pd.to_datetime(latest["week_start"]).min().date()),
         "display_currency": "CNY",
         "facts_only": True,
         "ai_insight": None,

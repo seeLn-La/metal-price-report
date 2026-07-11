@@ -4,8 +4,9 @@
   "generated_by": "local_facts_only_demo",
   "external_ai_call": false,
   "language": "zh-CN",
-  "generated_at": "2026-07-11T10:33:21.393762+00:00",
+  "generated_at": "2026-07-11T10:58:53.917355+00:00",
   "week_end": "2026-07-10",
+  "week_start": "2026-07-06",
   "market_snapshot": {
     "biggest_gainer": {
       "metal": "锡",

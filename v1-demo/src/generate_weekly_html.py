@@ -28,6 +28,11 @@ def unit_label(unit: str) -> str:
     return unit.replace("人民币", "元")
 
 
+def date_label(value: str) -> str:
+    parts = value.split("-")
+    return f"{int(parts[1])}月{int(parts[2])}日"
+
+
 def trend_chart(metal: str, points: list[dict]) -> str:
     values = [point["price"] for point in points if point["price"] is not None]
     if not values:
@@ -117,6 +122,7 @@ def main() -> int:
             <span class="change {tone}"><span>{pct(change)}</span><span class="change-label">较上周</span></span>
           </div>
           <div class="price">{price(item['price'])}<span>{html.escape(unit_label(item['unit']))}</span></div>
+          { '<div class="price-note">国际市场基准价，不含首饰加工费和品牌溢价</div>' if item['metal'] == '黄金' else '' }
           <div class="position-label"><span>近3个月价格位置</span><strong>{position:.0f}%</strong></div>
           <div class="position-track"><span style="left:{position:.1f}%"></span></div>
         </article>
@@ -168,6 +174,7 @@ def main() -> int:
     .change {{ display:flex; align-items:baseline; gap:5px; font-size:18px; font-weight:700; white-space:nowrap; }}
     .price {{ margin:18px 0 8px; font-size:28px; font-weight:750; line-height:1; }}
     .price span {{ margin-left:5px; color:var(--muted); font-size:12px; font-weight:400; }}
+    .price-note {{ margin-top:-8px; color:var(--muted); font-size:11px; }}
     .change-label {{ color:var(--muted); font-size:11px; font-weight:400; }}
     .analysis-intro {{ margin:0 0 12px; color:var(--muted); font-size:13px; }}
     .position-track {{ position:relative; height:6px; margin-top:6px; border-radius:999px; background:linear-gradient(90deg,#d8e9df,#e9d9b4,#eed0cb); }}
@@ -215,7 +222,7 @@ def main() -> int:
     <header>
       <div class="eyebrow">Metal Intelligence · Weekly Facts</div>
       <h1>金属市场周报</h1>
-      <div class="date">截至 {html.escape(report['week_end'])} · 人民币展示口径</div>
+      <div class="date">本周行情：{date_label(report['week_start'])} - {date_label(report['week_end'])} · 人民币展示口径</div>
     </header>
     <section aria-labelledby="summary-title">
       <div class="section-head"><h2 id="summary-title" class="section-title">本周概览</h2><span class="section-meta">事实数据</span></div>

@@ -2,8 +2,9 @@
   "schema_version": "1.0",
   "report_type": "metal_weekly_facts_only",
   "language": "zh-CN",
-  "generated_at": "2026-07-11T10:33:21.352968+00:00",
+  "generated_at": "2026-07-11T10:58:40.003506+00:00",
   "week_end": "2026-07-10",
+  "week_start": "2026-07-06",
   "display_currency": "CNY",
   "facts_only": true,
   "ai_insight": null,
@@ -81,72 +82,84 @@
     "白银": [
       {
         "week_end": "2026-04-24",
+        "week_start": "2026-04-20",
         "price": 16.76309,
         "unit": "人民币/克",
         "weekly_change_pct": -6.484286
       },
       {
         "week_end": "2026-05-01",
+        "week_start": "2026-04-27",
         "price": 16.671456,
         "unit": "人民币/克",
         "weekly_change_pct": -0.546645
       },
       {
         "week_end": "2026-05-08",
+        "week_start": "2026-05-04",
         "price": 17.579981,
         "unit": "人民币/克",
         "weekly_change_pct": 5.449587
       },
       {
         "week_end": "2026-05-15",
+        "week_start": "2026-05-11",
         "price": 16.832367,
         "unit": "人民币/克",
         "weekly_change_pct": -4.252649
       },
       {
         "week_end": "2026-05-22",
+        "week_start": "2026-05-18",
         "price": 16.598212,
         "unit": "人民币/克",
         "weekly_change_pct": -1.391097
       },
       {
         "week_end": "2026-05-29",
+        "week_start": "2026-05-26",
         "price": 16.481715,
         "unit": "人民币/克",
         "weekly_change_pct": -0.701862
       },
       {
         "week_end": "2026-06-05",
+        "week_start": "2026-06-01",
         "price": 15.01393,
         "unit": "人民币/克",
         "weekly_change_pct": -8.90554
       },
       {
         "week_end": "2026-06-12",
+        "week_start": "2026-06-08",
         "price": 14.782227,
         "unit": "人民币/克",
         "weekly_change_pct": -1.543252
       },
       {
         "week_end": "2026-06-18",
+        "week_start": "2026-06-15",
         "price": 14.393833,
         "unit": "人民币/克",
         "weekly_change_pct": -2.627438
       },
       {
         "week_end": "2026-06-26",
+        "week_start": "2026-06-22",
         "price": 12.927282,
         "unit": "人民币/克",
         "weekly_change_pct": -10.188744
       },
       {
         "week_end": "2026-07-02",
+        "week_start": "2026-06-29",
         "price": 13.246772,
         "unit": "人民币/克",
         "weekly_change_pct": 2.471441
       },
       {
         "week_end": "2026-07-10",
+        "week_start": "2026-07-06",
         "price": 13.060556,
         "unit": "人民币/克",
         "weekly_change_pct": -1.405751
@@ -155,72 +168,84 @@
     "铜": [
       {
         "week_end": "2026-04-24",
+        "week_start": "2026-04-20",
         "price": 90646.17214,
         "unit": "人民币/吨",
         "weekly_change_pct": -1.239828
       },
       {
         "week_end": "2026-05-01",
+        "week_start": "2026-04-27",
         "price": 89286.213345,
         "unit": "人民币/吨",
         "weekly_change_pct": -1.500294
       },
       {
         "week_end": "2026-05-08",
+        "week_start": "2026-05-04",
         "price": 93700.760987,
         "unit": "人民币/吨",
         "weekly_change_pct": 4.944266
       },
       {
         "week_end": "2026-05-15",
+        "week_start": "2026-05-11",
         "price": 93513.595533,
         "unit": "人民币/吨",
         "weekly_change_pct": -0.199748
       },
       {
         "week_end": "2026-05-22",
+        "week_start": "2026-05-18",
         "price": 95110.624547,
         "unit": "人民币/吨",
         "weekly_change_pct": 1.707804
       },
       {
         "week_end": "2026-05-29",
+        "week_start": "2026-05-26",
         "price": 95050.606413,
         "unit": "人民币/吨",
         "weekly_change_pct": -0.063104
       },
       {
         "week_end": "2026-06-05",
+        "week_start": "2026-06-01",
         "price": 93532.919176,
         "unit": "人民币/吨",
         "weekly_change_pct": -1.596715
       },
       {
         "week_end": "2026-06-12",
+        "week_start": "2026-06-08",
         "price": 96055.080917,
         "unit": "人民币/吨",
         "weekly_change_pct": 2.69655
       },
       {
         "week_end": "2026-06-18",
+        "week_start": "2026-06-15",
         "price": 94961.404512,
         "unit": "人民币/吨",
         "weekly_change_pct": -1.138593
       },
       {
         "week_end": "2026-06-26",
+        "week_start": "2026-06-22",
         "price": 91934.493386,
         "unit": "人民币/吨",
         "weekly_change_pct": -3.187517
       },
       {
         "week_end": "2026-07-02",
+        "week_start": "2026-06-29",
         "price": 91586.937112,
         "unit": "人民币/吨",
         "weekly_change_pct": -0.378048
       },
       {
         "week_end": "2026-07-10",
+        "week_start": "2026-07-06",
         "price": 93340.536308,
         "unit": "人民币/吨",
         "weekly_change_pct": 1.914683
@@ -229,72 +254,84 @@
     "锡": [
       {
         "week_end": "2026-04-24",
+        "week_start": "2026-04-20",
         "price": 387630.0,
         "unit": "人民币/吨",
         "weekly_change_pct": -0.775611
       },
       {
         "week_end": "2026-04-30",
+        "week_start": "2026-04-27",
         "price": 387370.0,
         "unit": "人民币/吨",
         "weekly_change_pct": -0.067074
       },
       {
         "week_end": "2026-05-08",
+        "week_start": "2026-05-06",
         "price": 425960.0,
         "unit": "人民币/吨",
         "weekly_change_pct": 9.962052
       },
       {
         "week_end": "2026-05-15",
+        "week_start": "2026-05-11",
         "price": 409060.0,
         "unit": "人民币/吨",
         "weekly_change_pct": -3.967509
       },
       {
         "week_end": "2026-05-22",
+        "week_start": "2026-05-18",
         "price": 421320.0,
         "unit": "人民币/吨",
         "weekly_change_pct": 2.997115
       },
       {
         "week_end": "2026-05-29",
+        "week_start": "2026-05-25",
         "price": 424650.0,
         "unit": "人民币/吨",
         "weekly_change_pct": 0.790373
       },
       {
         "week_end": "2026-06-05",
+        "week_start": "2026-06-01",
         "price": 417850.0,
         "unit": "人民币/吨",
         "weekly_change_pct": -1.601319
       },
       {
         "week_end": "2026-06-12",
+        "week_start": "2026-06-08",
         "price": 407990.0,
         "unit": "人民币/吨",
         "weekly_change_pct": -2.359698
       },
       {
         "week_end": "2026-06-18",
+        "week_start": "2026-06-15",
         "price": 414330.0,
         "unit": "人民币/吨",
         "weekly_change_pct": 1.55396
       },
       {
         "week_end": "2026-06-26",
+        "week_start": "2026-06-22",
         "price": 387220.0,
         "unit": "人民币/吨",
         "weekly_change_pct": -6.543094
       },
       {
         "week_end": "2026-07-03",
+        "week_start": "2026-06-29",
         "price": 402180.0,
         "unit": "人民币/吨",
         "weekly_change_pct": 3.863437
       },
       {
         "week_end": "2026-07-10",
+        "week_start": "2026-07-06",
         "price": 415680.0,
         "unit": "人民币/吨",
         "weekly_change_pct": 3.356706
@@ -303,72 +340,84 @@
     "黄金": [
       {
         "week_end": "2026-04-24",
+        "week_start": "2026-04-20",
         "price": 1036.360651,
         "unit": "人民币/克",
         "weekly_change_pct": -2.715497
       },
       {
         "week_end": "2026-05-01",
+        "week_start": "2026-04-27",
         "price": 1016.275966,
         "unit": "人民币/克",
         "weekly_change_pct": -1.938002
       },
       {
         "week_end": "2026-05-08",
+        "week_start": "2026-05-04",
         "price": 1032.210289,
         "unit": "人民币/克",
         "weekly_change_pct": 1.567913
       },
       {
         "week_end": "2026-05-15",
+        "week_start": "2026-05-11",
         "price": 993.829641,
         "unit": "人民币/克",
         "weekly_change_pct": -3.718297
       },
       {
         "week_end": "2026-05-22",
+        "week_start": "2026-05-18",
         "price": 988.767322,
         "unit": "人民币/克",
         "weekly_change_pct": -0.509375
       },
       {
         "week_end": "2026-05-29",
+        "week_start": "2026-05-26",
         "price": 994.033882,
         "unit": "人民币/克",
         "weekly_change_pct": 0.532639
       },
       {
         "week_end": "2026-06-05",
+        "week_start": "2026-06-01",
         "price": 944.50365,
         "unit": "人民币/克",
         "weekly_change_pct": -4.982751
       },
       {
         "week_end": "2026-06-12",
+        "week_start": "2026-06-08",
         "price": 918.184547,
         "unit": "人民币/克",
         "weekly_change_pct": -2.786554
       },
       {
         "week_end": "2026-06-18",
+        "week_start": "2026-06-15",
         "price": 917.681594,
         "unit": "人民币/克",
         "weekly_change_pct": -0.054777
       },
       {
         "week_end": "2026-06-26",
+        "week_start": "2026-06-22",
         "price": 890.394752,
         "unit": "人民币/克",
         "weekly_change_pct": -2.973454
       },
       {
         "week_end": "2026-07-02",
+        "week_start": "2026-06-29",
         "price": 898.372475,
         "unit": "人民币/克",
         "weekly_change_pct": 0.895976
       },
       {
         "week_end": "2026-07-10",
+        "week_start": "2026-07-06",
         "price": 896.216788,
         "unit": "人民币/克",
         "weekly_change_pct": -0.239955
@@ -403,7 +452,7 @@
       }
     ],
     "fx_source": "Yahoo Finance CNY=X for USD-denominated contracts",
-    "updated_at": "2026-07-11T10:33:21.179174+00:00"
+    "updated_at": "2026-07-11T10:58:39.824922+00:00"
   },
   "data_quality": {
     "all_metals_present": true,

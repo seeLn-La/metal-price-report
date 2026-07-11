@@ -55,6 +55,7 @@ def main() -> int:
         "language": "zh-CN",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "week_end": facts["week_end"],
+        "week_start": facts["week_start"],
         "market_snapshot": {
             "biggest_gainer": {
                 "metal": facts["market_summary"]["biggest_gainer"],
