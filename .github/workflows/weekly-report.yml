@@ -27,7 +27,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: python -m pip install -r requirements.txt
+        run: python -m pip install -r v1-demo/requirements.txt
 
       - name: Refresh, validate, and render
         run: python v1-demo/src/run_weekly_pipeline.py --tin-days 365 --workers 8
