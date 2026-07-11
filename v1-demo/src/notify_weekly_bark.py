@@ -13,6 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 FACTS_PATH = ROOT / "data" / "processed" / "weekly_report.json"
 REVIEW_PATH = ROOT / "reports" / "weekly_data_review.json"
+DEFAULT_REPORT_URL = "https://seeln-la.github.io/metal-price-report/v1-demo/weekly/"
 
 
 def send() -> None:
@@ -29,7 +30,7 @@ def send() -> None:
     title = f"金属市场周报｜截至{facts['week_end']}"
     body = f"{changes}\n数据状态：{passed}"
     params = {"title": title, "body": body}
-    report_url = os.environ.get("WEEKLY_REPORT_URL", "").strip()
+    report_url = os.environ.get("WEEKLY_REPORT_URL", DEFAULT_REPORT_URL).strip()
     if report_url:
         params["url"] = report_url
     url = f"{os.environ.get('BARK_BASE_URL', 'https://api.day.app').rstrip('/')}/{bark_key}?{urllib.parse.urlencode(params)}"
@@ -40,6 +41,7 @@ def send() -> None:
         raise RuntimeError(f"Bark 推送失败：{result.get('message', result)}")
     print(f"推送成功：{title}")
     print(body)
+    print(f"网页链接：{report_url}")
 
 
 if __name__ == "__main__":
