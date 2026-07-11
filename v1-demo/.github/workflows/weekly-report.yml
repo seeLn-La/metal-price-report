@@ -2,6 +2,10 @@ name: Weekly Metal Report
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "v1-demo/**"
   schedule:
     # Saturday 10:00 China Standard Time, after the Friday market close.
     - cron: "0 2 * * 6"
