@@ -1,0 +1,130 @@
+{
+  "黄金": {
+    "headline": "美元变弱，黄金小幅回升",
+    "conclusion_status": "mixed",
+    "conclusion": "本周黄金受到美元和收益率回落的短线支持，但涨幅很小，暂时不能判断趋势已经反转。",
+    "drivers": [
+      {
+        "type": "外部环境",
+        "text": "7月9日美元走弱、美国国债收益率回落，黄金当天出现反弹。",
+        "source": "Kitco",
+        "url": "https://www.kitco.com/news/article/2026-07-09/gold-rebounds-silver-soars-easing-oil-softer-dollar-lift-metals"
+      },
+      {
+        "type": "库存和买货",
+        "text": "这周没有拿到黄金库存和实物买货数据，所以暂时无法判断大家买黄金的需求强不强。",
+        "source": "数据复核规则",
+        "url": ""
+      },
+      {
+        "type": "价格表现",
+        "text": "黄金本周小幅上涨，说明利好和压力同时存在，价格没有出现大幅变化。",
+        "source": "统一周度数据",
+        "url": ""
+      },
+      {
+        "type": "注意事项",
+        "text": "目前不能确定美元、利率和真实买货需求各自影响了多少。",
+        "source": "数据复核规则",
+        "url": ""
+      }
+    ],
+    "caveat": "本周黄金仅小幅上涨，价格数据无法单独证明某一事件的具体贡献。"
+  },
+  "白银": {
+    "headline": "美元变弱，但白银仍小幅回落",
+    "conclusion_status": "weak",
+    "conclusion": "白银本周仍小幅下跌，美元走弱的利好没有转化为持续上涨，短期更接近震荡偏弱。",
+    "drivers": [
+      {
+        "type": "外部环境",
+        "text": "7月9日美元走弱、美国国债收益率回落，白银当天反弹，但没有扭转本周的小幅下跌。",
+        "source": "Kitco",
+        "url": "https://www.kitco.com/news/article/2026-07-09/gold-rebounds-silver-soars-easing-oil-softer-dollar-lift-metals"
+      },
+      {
+        "type": "库存和买货",
+        "text": "这周没有拿到白银库存和实物买货数据，所以暂时无法判断供需有没有变好。",
+        "source": "数据复核规则",
+        "url": ""
+      },
+      {
+        "type": "价格表现",
+        "text": "白银本周小幅下跌，说明短期压力暂时盖过了市场对白银供应偏紧的期待。",
+        "source": "统一周度数据",
+        "url": ""
+      },
+      {
+        "type": "注意事项",
+        "text": "白银既像黄金一样受金融市场影响，也会受到工业需求影响，不能只看一个原因。",
+        "source": "数据复核规则",
+        "url": ""
+      }
+    ],
+    "caveat": "白银同时具有贵金属和工业金属属性，短期波动通常高于黄金。"
+  },
+  "铜": {
+    "headline": "库存减少，企业开始补货",
+    "conclusion_status": "supported",
+    "conclusion": "铜本周偏强，库存减少和下游补货是较明确的支持因素，但这不代表涨势一定延续。",
+    "drivers": [
+      {
+        "type": "外部环境",
+        "text": "7月10日市场信息显示美元走弱，基本金属整体上涨，为铜价提供共同的宏观支撑。",
+        "source": "上海有色网",
+        "url": "https://news.smm.cn/news/103998642"
+      },
+      {
+        "type": "库存和买货",
+        "text": "铜价回落后，下游企业开始逢低补货，库存减少和补货一起支持了铜价。",
+        "source": "新浪财经",
+        "url": "https://finance.sina.com.cn/wm/2026-07-10/doc-inihhrai8381929.shtml"
+      },
+      {
+        "type": "价格表现",
+        "text": "铜本周上涨2.76%，库存减少和下游补货是目前数据中最清晰的支持因素。",
+        "source": "统一周度数据",
+        "url": ""
+      },
+      {
+        "type": "注意事项",
+        "text": "关税还没有正式实施，不能把这件事当成已经发生的成本冲击。",
+        "source": "数据复核规则",
+        "url": ""
+      }
+    ],
+    "caveat": "库存数据和期货价格口径不同，库存下降不等于未来价格必然上涨。"
+  },
+  "锡": {
+    "headline": "库存减少，但高价压制买货",
+    "conclusion_status": "mixed",
+    "conclusion": "锡价上涨受到库存减少和供应不稳支持，但高价压制买货，短期更像供应收紧带来的反弹，而不是需求全面转强。",
+    "drivers": [
+      {
+        "type": "外部环境",
+        "text": "7月10日美元走弱、基本金属普遍上涨，锡价也受到短线带动。",
+        "source": "上海有色网",
+        "url": "https://news.smm.cn/news/103998642"
+      },
+      {
+        "type": "库存和买货",
+        "text": "国内锡库存连续减少；同时缅甸矿山受到雨季和复产条件限制，锡的供应恢复还不稳定。",
+        "source": "东方财富 / 新浪财经",
+        "url": "https://finance.eastmoney.com/a/202607063795310066.html"
+      },
+      {
+        "type": "价格表现",
+        "text": "锡价较高时，下游企业会减少马上采购；传统行业淡季也让需求偏弱，所以这次上涨更像库存和供应收紧带来的反弹。",
+        "source": "上海有色网",
+        "url": "https://news.metal.com/newscontent/103982828-macro-headwinds-weighed-tin-prices-retreated-after-a-rapid-rise-and-spot-tin-transactions-were-mired-in-a-high-price-su"
+      },
+      {
+        "type": "注意事项",
+        "text": "锡价波动较大，后续还要继续观察库存和供应变化。",
+        "source": "数据复核规则",
+        "url": ""
+      }
+    ],
+    "caveat": "锡的价格波动较大，已补齐近3个月数据，但供需因果仍需持续跟踪。"
+  }
+}

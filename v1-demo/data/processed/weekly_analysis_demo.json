@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "report_type": "metal_weekly_demo_analysis",
+  "generated_by": "local_facts_only_demo",
+  "external_ai_call": false,
+  "language": "zh-CN",
+  "generated_at": "2026-07-11T10:33:21.393762+00:00",
+  "week_end": "2026-07-10",
+  "market_snapshot": {
+    "biggest_gainer": {
+      "metal": "锡",
+      "change_pct": 3.356706
+    },
+    "biggest_loser": {
+      "metal": "白银",
+      "change_pct": -1.405751
+    },
+    "one_sentence_summary": "本周金属价格表现分化：锡和铜上涨，黄金小幅上涨，白银小幅下跌。"
+  },
+  "metal_analysis": [
+    {
+      "metal": "白银",
+      "price": 13.060556,
+      "unit": "人民币/克",
+      "weekly_change_pct": -1.405751,
+      "trend_12_weeks": "下跌",
+      "facts": [
+        "本周收盘价为 13.06 人民币/克。",
+        "本周人民币口径价格下跌 1.41%。",
+        "当前可用趋势数据为 12 周。"
+      ],
+      "interpretation": "现有数据只能确认价格变化，无法确认具体原因。",
+      "risk_note": "价格来自不同市场和合约口径，横向比较仅使用周涨跌幅。"
+    },
+    {
+      "metal": "铜",
+      "price": 93340.536308,
+      "unit": "人民币/吨",
+      "weekly_change_pct": 1.914683,
+      "trend_12_weeks": "震荡",
+      "facts": [
+        "本周收盘价为 93340.54 人民币/吨。",
+        "本周人民币口径价格上涨 1.91%。",
+        "当前可用趋势数据为 12 周。"
+      ],
+      "interpretation": "现有数据只能确认价格变化，无法确认具体原因。",
+      "risk_note": "价格来自不同市场和合约口径，横向比较仅使用周涨跌幅。"
+    },
+    {
+      "metal": "锡",
+      "price": 415680.0,
+      "unit": "人民币/吨",
+      "weekly_change_pct": 3.356706,
+      "trend_12_weeks": "上涨",
+      "facts": [
+        "本周收盘价为 415680.00 人民币/吨。",
+        "本周人民币口径价格上涨 3.36%。",
+        "当前可用趋势数据为 12 周。"
+      ],
+      "interpretation": "现有数据只能确认价格变化，无法确认具体原因。",
+      "risk_note": "价格来自不同市场和合约口径，横向比较仅使用周涨跌幅。"
+    },
+    {
+      "metal": "黄金",
+      "price": 896.216788,
+      "unit": "人民币/克",
+      "weekly_change_pct": -0.239955,
+      "trend_12_weeks": "下跌",
+      "facts": [
+        "本周收盘价为 896.22 人民币/克。",
+        "本周人民币口径价格下跌 0.24%。",
+        "当前可用趋势数据为 12 周。"
+      ],
+      "interpretation": "现有数据只能确认价格变化，无法确认具体原因。",
+      "risk_note": "价格来自不同市场和合约口径，横向比较仅使用周涨跌幅。"
+    }
+  ],
+  "comparison": {
+    "relative_performance": "按人民币口径周涨跌幅，锡表现最强，白银表现最弱。",
+    "price_comparison_warning": "黄金、白银以人民币/克展示，铜、锡以人民币/吨展示，原始价格不可直接比较。"
+  },
+  "data_limitations": [
+    "黄金、白银、铜的人民币价格使用 Yahoo Finance CNY=X 日汇率换算。",
+    "锡使用 SHFE 人民币/吨报价，不需要汇率换算。",
+    "本文件只包含数据事实，不包含 AI 解读或因果判断。"
+  ],
+  "next_week_watchlist": [
+    "继续观察四种金属的人民币口径周涨跌变化。"
+  ]
+}

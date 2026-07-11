@@ -1,0 +1,36 @@
+name: Weekly Metal Report
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Saturday 10:00 China Standard Time, after the Friday market close.
+    - cron: "0 2 * * 6"
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Refresh, validate, and render
+        run: python src/run_weekly_pipeline.py --tin-days 365 --workers 8
+
+      - name: Upload weekly outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: metal-weekly-${{ github.run_number }}
+          path: |
+            data/processed/*.json
+            reports/*.json
+            public/weekly/index.html
