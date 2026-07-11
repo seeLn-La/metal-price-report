@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 FACTS_PATH = ROOT / "data" / "processed" / "weekly_report.json"
 REVIEW_PATH = ROOT / "reports" / "weekly_data_review.json"
-DEFAULT_REPORT_URL = "https://seeln-la.github.io/metal-price-report/v1-demo/weekly/"
+DEFAULT_REPORT_URL = "https://seeln-la.github.io/metal-price-report/v1-demo/weekly/index.html"
 
 
 def send() -> None:

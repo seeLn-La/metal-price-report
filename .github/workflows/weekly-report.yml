@@ -56,5 +56,5 @@ jobs:
         env:
           BARK_KEY: ${{ secrets.BARK_KEY }}
           BARK_BASE_URL: ${{ secrets.BARK_BASE_URL }}
-          WEEKLY_REPORT_URL: https://seeln-la.github.io/metal-price-report/v1-demo/weekly/
+          WEEKLY_REPORT_URL: https://seeln-la.github.io/metal-price-report/v1-demo/weekly/index.html
         run: python v1-demo/src/notify_weekly_bark.py
