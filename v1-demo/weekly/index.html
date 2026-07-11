@@ -30,9 +30,11 @@
     .metal-head h2 { margin:0; font-size:20px; }
     .unit { color:var(--muted); font-size:12px; }
     .change { display:flex; align-items:baseline; gap:5px; font-size:18px; font-weight:700; white-space:nowrap; }
-    .price { margin:18px 0 8px; font-size:28px; font-weight:750; line-height:1; }
+    .price-label { margin-top:18px; color:var(--muted); font-size:11px; }
+    .price { margin:3px 0 8px; font-size:28px; font-weight:750; line-height:1; }
     .price span { margin-left:5px; color:var(--muted); font-size:12px; font-weight:400; }
     .price-note { margin-top:-8px; color:var(--muted); font-size:11px; }
+    .secondary-prices { display:flex; flex-direction:column; gap:2px; margin-top:10px; color:var(--muted); font-size:11px; }
     .change-label { color:var(--muted); font-size:11px; font-weight:400; }
     .analysis-intro { margin:0 0 12px; color:var(--muted); font-size:13px; }
     .position-track { position:relative; height:6px; margin-top:6px; border-radius:999px; background:linear-gradient(90deg,#d8e9df,#e9d9b4,#eed0cb); }
@@ -86,12 +88,12 @@
       <div class="section-head"><h2 id="summary-title" class="section-title">本周概览</h2><span class="section-meta">事实数据</span></div>
       <p class="summary">本周金属价格表现分化：锡和铜上涨，黄金小幅上涨，白银小幅下跌。</p>
       <div class="rank-grid">
-        <div class="rank"><small>本周涨幅最大</small><strong class="up">锡 +3.36%</strong></div>
-        <div class="rank"><small>本周表现最弱</small><strong class="down">白银 -1.41%</strong></div>
+        <div class="rank"><small>本周涨幅最大</small><strong class="up">锡 +4.49%</strong></div>
+        <div class="rank"><small>本周表现最弱</small><strong class="down">铜 +0.62%</strong></div>
       </div>
     </section>
     <section aria-labelledby="prices-title">
-      <div class="section-head"><h2 id="prices-title" class="section-title">价格与变化</h2><span class="section-meta">较上周</span></div>
+      <div class="section-head"><h2 id="prices-title" class="section-title">价格与变化</h2><span class="section-meta">较上周均价</span></div>
       <p class="analysis-intro">价格位置表示当前价格在近3个月区间中的位置：0% 接近最低价，100% 接近最高价。</p>
       <div class="metal-grid">
         <article class="metal-card">
@@ -100,12 +102,14 @@
               <h2>白银</h2>
               <span class="unit">元/克</span>
             </div>
-            <span class="change down"><span>-1.41%</span><span class="change-label">较上周</span></span>
+            <span class="change up"><span>+1.08%</span><span class="change-label">较上周</span></span>
           </div>
-          <div class="price">13.06<span>元/克</span></div>
+          <div class="price-label">本周均价</div>
+          <div class="price">13.16<span>元/克</span></div>
           
+          <div class="secondary-prices"><span>周末收盘 13.06</span><span>周内高低 13.67 / 12.62</span></div>
           <div class="position-label"><span>近3个月价格位置</span><strong>3%</strong></div>
-          <div class="position-track"><span style="left:2.9%"></span></div>
+          <div class="position-track"><span style="left:2.6%"></span></div>
         </article>
         
         <article class="metal-card">
@@ -114,12 +118,14 @@
               <h2>铜</h2>
               <span class="unit">元/吨</span>
             </div>
-            <span class="change up"><span>+1.91%</span><span class="change-label">较上周</span></span>
+            <span class="change up"><span>+0.62%</span><span class="change-label">较上周</span></span>
           </div>
-          <div class="price">93,340.54<span>元/吨</span></div>
+          <div class="price-label">本周均价</div>
+          <div class="price">92,429.68<span>元/吨</span></div>
           
-          <div class="position-label"><span>近3个月价格位置</span><strong>60%</strong></div>
-          <div class="position-track"><span style="left:59.9%"></span></div>
+          <div class="secondary-prices"><span>周末收盘 93,340.54</span><span>周内高低 93,535.95 / 90,093.44</span></div>
+          <div class="position-label"><span>近3个月价格位置</span><strong>41%</strong></div>
+          <div class="position-track"><span style="left:40.6%"></span></div>
         </article>
         
         <article class="metal-card">
@@ -128,12 +134,14 @@
               <h2>锡</h2>
               <span class="unit">元/吨</span>
             </div>
-            <span class="change up"><span>+3.36%</span><span class="change-label">较上周</span></span>
+            <span class="change up"><span>+4.49%</span><span class="change-label">较上周</span></span>
           </div>
-          <div class="price">415,680.00<span>元/吨</span></div>
+          <div class="price-label">本周均价</div>
+          <div class="price">412,620.00<span>元/吨</span></div>
           
-          <div class="position-label"><span>近3个月价格位置</span><strong>73%</strong></div>
-          <div class="position-track"><span style="left:73.5%"></span></div>
+          <div class="secondary-prices"><span>周末收盘 415,680.00</span><span>周内高低 419,350.00 / 401,100.00</span></div>
+          <div class="position-label"><span>近3个月价格位置</span><strong>52%</strong></div>
+          <div class="position-track"><span style="left:52.2%"></span></div>
         </article>
         
         <article class="metal-card">
@@ -142,12 +150,14 @@
               <h2>黄金</h2>
               <span class="unit">元/克</span>
             </div>
-            <span class="change down"><span>-0.24%</span><span class="change-label">较上周</span></span>
+            <span class="change up"><span>+1.59%</span><span class="change-label">较上周</span></span>
           </div>
-          <div class="price">896.22<span>元/克</span></div>
+          <div class="price-label">本周均价</div>
+          <div class="price">900.27<span>元/克</span></div>
           <div class="price-note">国际市场基准价，不含首饰加工费和品牌溢价</div>
-          <div class="position-label"><span>近3个月价格位置</span><strong>4%</strong></div>
-          <div class="position-track"><span style="left:4.0%"></span></div>
+          <div class="secondary-prices"><span>周末收盘 896.22</span><span>周内高低 916.62 / 885.23</span></div>
+          <div class="position-label"><span>近3个月价格位置</span><strong>9%</strong></div>
+          <div class="position-track"><span style="left:9.3%"></span></div>
         </article>
         </div>
     </section>
@@ -155,74 +165,74 @@
       <div class="section-head"><h2 id="trend-title" class="section-title">价格趋势</h2><span class="section-meta">近3个月</span></div>
       <div class="trend-grid">
     <div class="trend-chart">
-      <div class="chart-caption"><span>白银 · 价格趋势（近3个月）</span><strong>13.06</strong></div>
+      <div class="chart-caption"><span>白银 · 周均价趋势（近3个月）</span><strong>13.16</strong></div>
       <svg viewBox="0 0 320 166" role="img" aria-label="白银价格趋势图">
         <line x1="42" y1="14" x2="42" y2="128" class="chart-axis" />
         <line x1="42" y1="128" x2="308" y2="128" class="chart-axis" />
-        <line x1="42" y1="14.0" x2="308" y2="14.0" class="chart-grid" /><text x="0" y="18.0" class="chart-tick">17.58</text><line x1="42" y1="71.0" x2="308" y2="71.0" class="chart-grid" /><text x="0" y="75.0" class="chart-tick">15.25</text><line x1="42" y1="128.0" x2="308" y2="128.0" class="chart-grid" /><text x="0" y="132.0" class="chart-tick">12.93</text>
+        <line x1="42" y1="14.0" x2="308" y2="14.0" class="chart-grid" /><text x="0" y="18.0" class="chart-tick">18.41</text><line x1="42" y1="71.0" x2="308" y2="71.0" class="chart-grid" /><text x="0" y="75.0" class="chart-tick">15.72</text><line x1="42" y1="128.0" x2="308" y2="128.0" class="chart-grid" /><text x="0" y="132.0" class="chart-tick">13.02</text>
         <line x1="42.0" y1="14" x2="42.0" y2="128" class="chart-month" /><text x="42.0" y="156" text-anchor="middle" class="chart-month-label">4月</text><line x1="66.2" y1="14" x2="66.2" y2="128" class="chart-month" /><text x="66.2" y="156" text-anchor="middle" class="chart-month-label">5月</text><line x1="187.1" y1="14" x2="187.1" y2="128" class="chart-month" /><text x="187.1" y="156" text-anchor="middle" class="chart-month-label">6月</text><line x1="283.8" y1="14" x2="283.8" y2="128" class="chart-month" /><text x="283.8" y="156" text-anchor="middle" class="chart-month-label">7月</text>
-        <polyline points="42.0,34.0 66.2,36.3 90.4,14.0 114.5,32.3 138.7,38.1 162.9,40.9 187.1,76.9 211.3,82.6 235.5,92.1 259.6,128.0 283.8,120.2 308.0,124.7" class="chart-line" />
-        <circle cx="308.0" cy="124.7" r="3.5" class="chart-dot" />
+        <polyline points="42.0,45.3 66.2,60.3 90.4,48.1 114.5,14.0 138.7,51.7 162.9,54.9 187.1,66.1 211.3,99.7 235.5,85.2 259.6,123.7 283.8,128.0 308.0,125.0" class="chart-line" />
+        <circle cx="308.0" cy="125.0" r="3.5" class="chart-dot" />
       </svg>
       <div class="trend-stats">
-        <div><span>区间涨跌</span><strong class="down">-22.09%</strong></div>
-        <div><span>区间最高</span><strong>17.58</strong></div>
-        <div><span>区间最低</span><strong>12.93</strong></div>
-        <div><span>较上周</span><strong>-1.41%</strong></div>
+        <div><span>3个月均价涨跌</span><strong class="down">-22.29%</strong></div>
+        <div><span>均价最高</span><strong>18.41</strong></div>
+        <div><span>均价最低</span><strong>13.02</strong></div>
+        <div><span>较上周</span><strong>+1.08%</strong></div>
       </div>
     </div>
     
     <div class="trend-chart">
-      <div class="chart-caption"><span>铜 · 价格趋势（近3个月）</span><strong>93,340.54</strong></div>
+      <div class="chart-caption"><span>铜 · 周均价趋势（近3个月）</span><strong>92,429.68</strong></div>
       <svg viewBox="0 0 320 166" role="img" aria-label="铜价格趋势图">
         <line x1="42" y1="14" x2="42" y2="128" class="chart-axis" />
         <line x1="42" y1="128" x2="308" y2="128" class="chart-axis" />
-        <line x1="42" y1="14.0" x2="308" y2="14.0" class="chart-grid" /><text x="0" y="18.0" class="chart-tick">96,055.08</text><line x1="42" y1="71.0" x2="308" y2="71.0" class="chart-grid" /><text x="0" y="75.0" class="chart-tick">92,670.65</text><line x1="42" y1="128.0" x2="308" y2="128.0" class="chart-grid" /><text x="0" y="132.0" class="chart-tick">89,286.21</text>
+        <line x1="42" y1="14.0" x2="308" y2="14.0" class="chart-grid" /><text x="0" y="18.0" class="chart-tick">96,899.00</text><line x1="42" y1="71.0" x2="308" y2="71.0" class="chart-grid" /><text x="0" y="75.0" class="chart-tick">93,138.11</text><line x1="42" y1="128.0" x2="308" y2="128.0" class="chart-grid" /><text x="0" y="132.0" class="chart-tick">89,377.22</text>
         <line x1="42.0" y1="14" x2="42.0" y2="128" class="chart-month" /><text x="42.0" y="156" text-anchor="middle" class="chart-month-label">4月</text><line x1="66.2" y1="14" x2="66.2" y2="128" class="chart-month" /><text x="66.2" y="156" text-anchor="middle" class="chart-month-label">5月</text><line x1="187.1" y1="14" x2="187.1" y2="128" class="chart-month" /><text x="187.1" y="156" text-anchor="middle" class="chart-month-label">6月</text><line x1="283.8" y1="14" x2="283.8" y2="128" class="chart-month" /><text x="283.8" y="156" text-anchor="middle" class="chart-month-label">7月</text>
-        <polyline points="42.0,105.1 66.2,128.0 90.4,53.7 114.5,56.8 138.7,29.9 162.9,30.9 187.1,56.5 211.3,14.0 235.5,32.4 259.6,83.4 283.8,89.3 308.0,59.7" class="chart-line" />
-        <circle cx="308.0" cy="59.7" r="3.5" class="chart-dot" />
+        <polyline points="42.0,103.4 66.2,128.0 90.4,103.9 114.5,14.0 138.7,57.9 162.9,41.8 187.1,16.1 211.3,54.2 235.5,24.3 259.6,93.3 283.8,90.4 308.0,81.7" class="chart-line" />
+        <circle cx="308.0" cy="81.7" r="3.5" class="chart-dot" />
       </svg>
       <div class="trend-stats">
-        <div><span>区间涨跌</span><strong class="up">+2.97%</strong></div>
-        <div><span>区间最高</span><strong>96,055.08</strong></div>
-        <div><span>区间最低</span><strong>89,286.21</strong></div>
-        <div><span>较上周</span><strong>+1.91%</strong></div>
+        <div><span>3个月均价涨跌</span><strong class="up">+1.57%</strong></div>
+        <div><span>均价最高</span><strong>96,899.00</strong></div>
+        <div><span>均价最低</span><strong>89,377.22</strong></div>
+        <div><span>较上周</span><strong>+0.62%</strong></div>
       </div>
     </div>
     
     <div class="trend-chart">
-      <div class="chart-caption"><span>锡 · 价格趋势（近3个月）</span><strong>415,680.00</strong></div>
+      <div class="chart-caption"><span>锡 · 周均价趋势（近3个月）</span><strong>412,620.00</strong></div>
       <svg viewBox="0 0 320 166" role="img" aria-label="锡价格趋势图">
         <line x1="42" y1="14" x2="42" y2="128" class="chart-axis" />
         <line x1="42" y1="128" x2="308" y2="128" class="chart-axis" />
-        <line x1="42" y1="14.0" x2="308" y2="14.0" class="chart-grid" /><text x="0" y="18.0" class="chart-tick">425,960.00</text><line x1="42" y1="71.0" x2="308" y2="71.0" class="chart-grid" /><text x="0" y="75.0" class="chart-tick">406,590.00</text><line x1="42" y1="128.0" x2="308" y2="128.0" class="chart-grid" /><text x="0" y="132.0" class="chart-tick">387,220.00</text>
+        <line x1="42" y1="14.0" x2="308" y2="14.0" class="chart-grid" /><text x="0" y="18.0" class="chart-tick">435,006.00</text><line x1="42" y1="71.0" x2="308" y2="71.0" class="chart-grid" /><text x="0" y="75.0" class="chart-tick">411,573.00</text><line x1="42" y1="128.0" x2="308" y2="128.0" class="chart-grid" /><text x="0" y="132.0" class="chart-tick">388,140.00</text>
         <line x1="42.0" y1="14" x2="42.0" y2="128" class="chart-month" /><text x="42.0" y="156" text-anchor="middle" class="chart-month-label">4月</text><line x1="90.4" y1="14" x2="90.4" y2="128" class="chart-month" /><text x="90.4" y="156" text-anchor="middle" class="chart-month-label">5月</text><line x1="187.1" y1="14" x2="187.1" y2="128" class="chart-month" /><text x="187.1" y="156" text-anchor="middle" class="chart-month-label">6月</text><line x1="283.8" y1="14" x2="283.8" y2="128" class="chart-month" /><text x="283.8" y="156" text-anchor="middle" class="chart-month-label">7月</text>
-        <polyline points="42.0,126.8 66.2,127.6 90.4,14.0 114.5,63.7 138.7,27.7 162.9,17.9 187.1,37.9 211.3,66.9 235.5,48.2 259.6,128.0 283.8,84.0 308.0,44.3" class="chart-line" />
-        <circle cx="308.0" cy="44.3" r="3.5" class="chart-dot" />
+        <polyline points="42.0,120.8 66.2,128.0 90.4,48.2 114.5,41.4 138.7,64.0 162.9,43.7 187.1,14.0 211.3,93.2 235.5,47.7 259.6,103.6 283.8,111.6 308.0,68.5" class="chart-line" />
+        <circle cx="308.0" cy="68.5" r="3.5" class="chart-dot" />
       </svg>
       <div class="trend-stats">
-        <div><span>区间涨跌</span><strong class="up">+7.24%</strong></div>
-        <div><span>区间最高</span><strong>425,960.00</strong></div>
-        <div><span>区间最低</span><strong>387,220.00</strong></div>
-        <div><span>较上周</span><strong>+3.36%</strong></div>
+        <div><span>3个月均价涨跌</span><strong class="up">+5.50%</strong></div>
+        <div><span>均价最高</span><strong>435,006.00</strong></div>
+        <div><span>均价最低</span><strong>388,140.00</strong></div>
+        <div><span>较上周</span><strong>+4.49%</strong></div>
       </div>
     </div>
     
     <div class="trend-chart">
-      <div class="chart-caption"><span>黄金 · 价格趋势（近3个月）</span><strong>896.22</strong></div>
+      <div class="chart-caption"><span>黄金 · 周均价趋势（近3个月）</span><strong>900.27</strong></div>
       <svg viewBox="0 0 320 166" role="img" aria-label="黄金价格趋势图">
         <line x1="42" y1="14" x2="42" y2="128" class="chart-axis" />
         <line x1="42" y1="128" x2="308" y2="128" class="chart-axis" />
-        <line x1="42" y1="14.0" x2="308" y2="14.0" class="chart-grid" /><text x="0" y="18.0" class="chart-tick">1,036.36</text><line x1="42" y1="71.0" x2="308" y2="71.0" class="chart-grid" /><text x="0" y="75.0" class="chart-tick">963.38</text><line x1="42" y1="128.0" x2="308" y2="128.0" class="chart-grid" /><text x="0" y="132.0" class="chart-tick">890.39</text>
+        <line x1="42" y1="14.0" x2="308" y2="14.0" class="chart-grid" /><text x="0" y="18.0" class="chart-tick">1,037.95</text><line x1="42" y1="71.0" x2="308" y2="71.0" class="chart-grid" /><text x="0" y="75.0" class="chart-tick">962.07</text><line x1="42" y1="128.0" x2="308" y2="128.0" class="chart-grid" /><text x="0" y="132.0" class="chart-tick">886.19</text>
         <line x1="42.0" y1="14" x2="42.0" y2="128" class="chart-month" /><text x="42.0" y="156" text-anchor="middle" class="chart-month-label">4月</text><line x1="66.2" y1="14" x2="66.2" y2="128" class="chart-month" /><text x="66.2" y="156" text-anchor="middle" class="chart-month-label">5月</text><line x1="187.1" y1="14" x2="187.1" y2="128" class="chart-month" /><text x="187.1" y="156" text-anchor="middle" class="chart-month-label">6月</text><line x1="283.8" y1="14" x2="283.8" y2="128" class="chart-month" /><text x="283.8" y="156" text-anchor="middle" class="chart-month-label">7月</text>
-        <polyline points="42.0,14.0 66.2,29.7 90.4,17.2 114.5,47.2 138.7,51.2 162.9,47.1 187.1,85.7 211.3,106.3 235.5,106.7 259.6,128.0 283.8,121.8 308.0,123.5" class="chart-line" />
-        <circle cx="308.0" cy="123.5" r="3.5" class="chart-dot" />
+        <polyline points="42.0,14.0 66.2,32.8 90.4,30.2 114.5,28.3 138.7,49.1 162.9,56.0 187.1,67.6 211.3,106.6 235.5,90.0 259.6,125.0 283.8,128.0 308.0,117.4" class="chart-line" />
+        <circle cx="308.0" cy="117.4" r="3.5" class="chart-dot" />
       </svg>
       <div class="trend-stats">
-        <div><span>区间涨跌</span><strong class="down">-13.52%</strong></div>
-        <div><span>区间最高</span><strong>1,036.36</strong></div>
-        <div><span>区间最低</span><strong>890.39</strong></div>
-        <div><span>较上周</span><strong>-0.24%</strong></div>
+        <div><span>3个月均价涨跌</span><strong class="down">-13.27%</strong></div>
+        <div><span>均价最高</span><strong>1,037.95</strong></div>
+        <div><span>均价最低</span><strong>886.19</strong></div>
+        <div><span>较上周</span><strong>+1.59%</strong></div>
       </div>
     </div>
     </div>
