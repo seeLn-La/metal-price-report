@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>金属市场周报｜截至 2026-07-10</title>
+  <style>
+    :root { --paper:#f6f4ef; --ink:#252525; --muted:#77736b; --line:#ded9cf; --up:#b44335; --down:#2f7d5a; --accent:#9a6b24; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB",sans-serif; line-height:1.55; }
+    main { width:min(100% - 28px, 760px); margin:0 auto; padding:28px 0 48px; }
+    header { padding:10px 2px 28px; border-bottom:1px solid var(--line); }
+    .eyebrow { color:var(--accent); font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
+    h1 { margin:8px 0 5px; font-size:clamp(28px,7vw,46px); line-height:1.12; letter-spacing:0; }
+    .date { color:var(--muted); font-size:14px; }
+    section { margin-top:26px; }
+    .section-head { display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:12px; }
+    h2.section-title { margin:0; font-size:18px; }
+    .section-meta { color:var(--muted); font-size:12px; }
+    .summary { padding:18px 0 4px; font-size:18px; max-width:650px; }
+    .summary strong { color:var(--accent); }
+    .rank-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+    .rank { border-top:3px solid var(--line); padding:12px 2px; }
+    .rank small { color:var(--muted); display:block; font-size:12px; }
+    .rank strong { display:block; margin-top:3px; font-size:22px; }
+    .up { color:var(--up); } .down { color:var(--down); } .flat { color:var(--muted); }
+    .metal-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .metal-card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:16px; min-width:0; }
+    .metal-head { display:flex; justify-content:space-between; align-items:start; gap:10px; }
+    .metal-head h2 { margin:0; font-size:20px; }
+    .unit { color:var(--muted); font-size:12px; }
+    .change { display:flex; align-items:baseline; gap:5px; font-size:18px; font-weight:700; white-space:nowrap; }
+    .price { margin:18px 0 8px; font-size:28px; font-weight:750; line-height:1; }
+    .price span { margin-left:5px; color:var(--muted); font-size:12px; font-weight:400; }
+    .change-label { color:var(--muted); font-size:11px; font-weight:400; }
+    .analysis-intro { margin:0 0 12px; color:var(--muted); font-size:13px; }
+    .position-track { position:relative; height:6px; margin-top:6px; border-radius:999px; background:linear-gradient(90deg,#d8e9df,#e9d9b4,#eed0cb); }
+    .position-track span { position:absolute; top:50%; width:12px; height:12px; border:2px solid #fff; border-radius:50%; background:#9a6b24; box-shadow:0 0 0 1px #9a6b24; transform:translate(-50%,-50%); }
+    .position-label { display:flex; justify-content:space-between; margin-top:14px; color:var(--muted); font-size:11px; }
+    .position-label strong { color:var(--ink); font-size:11px; }
+    .driver-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .driver-card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:14px; }
+    .driver-card-head { display:flex; justify-content:space-between; gap:10px; align-items:baseline; }
+    .driver-card-head strong { font-size:17px; } .driver-card-head span { color:var(--muted); font-size:12px; text-align:right; }
+    .driver-list { margin:7px 0 0; padding-left:17px; color:#5d5952; font-size:12px; }
+    .driver-list li { margin:5px 0; }
+    .driver-type { display:inline-block; margin-right:5px; color:var(--accent); font-weight:650; }
+    .driver-list a { color:var(--accent); white-space:nowrap; }
+    .source-note { color:var(--muted); white-space:nowrap; }
+    .driver-caveat { margin:8px 0 0; color:var(--muted); font-size:11px; }
+    .driver-conclusion { margin:10px 0 0; padding-top:9px; border-top:1px solid var(--line); font-size:12px; line-height:1.6; }
+    .driver-conclusion strong { display:block; margin-bottom:2px; color:var(--accent); font-size:11px; }
+    .trend-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .trend-chart { background:#fff; border:1px solid var(--line); border-radius:8px; padding:12px; }
+    .chart-caption { display:flex; justify-content:space-between; gap:8px; font-size:13px; }
+    .chart-caption strong { font-size:13px; }
+    .trend-chart svg { display:block; width:100%; height:auto; margin-top:8px; }
+    .chart-axis { stroke:#9f998e; stroke-width:1; }
+    .chart-grid { stroke:#ebe7df; stroke-width:1; }
+    .chart-tick { fill:#77736b; font-size:9px; }
+    .chart-month { stroke:#f0ede7; stroke-width:1; stroke-dasharray:2 3; }
+    .chart-month-label { fill:#77736b; font-size:9px; }
+    .chart-line { fill:none; stroke:#9a6b24; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
+    .chart-dot { fill:#9a6b24; }
+    .chart-labels { display:flex; justify-content:space-between; color:var(--muted); font-size:11px; }
+    .trend-stats { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px 12px; margin-top:11px; padding-top:10px; border-top:1px solid var(--line); }
+    .trend-stats div { display:flex; justify-content:space-between; gap:8px; font-size:12px; }
+    .trend-stats span { color:var(--muted); } .trend-stats strong { font-weight:650; }
+    .empty-chart { color:var(--muted); font-size:13px; padding:24px 0; }
+    .panel { border-top:1px solid var(--line); padding-top:14px; }
+    .notice { color:#76551f; font-size:14px; }
+    ul { margin:8px 0 0; padding-left:20px; color:var(--muted); font-size:13px; }
+    footer { margin-top:32px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
+    @media (max-width:560px) { .metal-grid { grid-template-columns:1fr; } .trend-grid { grid-template-columns:1fr; } .driver-grid { grid-template-columns:1fr; } .summary { font-size:17px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">Metal Intelligence · Weekly Facts</div>
+      <h1>金属市场周报</h1>
+      <div class="date">截至 2026-07-10 · 人民币展示口径</div>
+    </header>
+    <section aria-labelledby="summary-title">
+      <div class="section-head"><h2 id="summary-title" class="section-title">本周概览</h2><span class="section-meta">事实数据</span></div>
+      <p class="summary">本周金属价格表现分化：锡和铜上涨，黄金小幅上涨，白银小幅下跌。</p>
+      <div class="rank-grid">
+        <div class="rank"><small>本周涨幅最大</small><strong class="up">锡 +3.36%</strong></div>
+        <div class="rank"><small>本周表现最弱</small><strong class="down">白银 -1.41%</strong></div>
+      </div>
+    </section>
+    <section aria-labelledby="prices-title">
+      <div class="section-head"><h2 id="prices-title" class="section-title">价格与变化</h2><span class="section-meta">较上周</span></div>
+      <p class="analysis-intro">价格位置表示当前价格在近3个月区间中的位置：0% 接近最低价，100% 接近最高价。</p>
+      <div class="metal-grid">
+        <article class="metal-card">
+          <div class="metal-head">
+            <div>
+              <h2>白银</h2>
+              <span class="unit">元/克</span>
+            </div>
+            <span class="change down"><span>-1.41%</span><span class="change-label">较上周</span></span>
+          </div>
+          <div class="price">13.06<span>元/克</span></div>
+          <div class="position-label"><span>近3个月价格位置</span><strong>3%</strong></div>
+          <div class="position-track"><span style="left:2.9%"></span></div>
+        </article>
+        
+        <article class="metal-card">
+          <div class="metal-head">
+            <div>
+              <h2>铜</h2>
+              <span class="unit">元/吨</span>
+            </div>
+            <span class="change up"><span>+1.91%</span><span class="change-label">较上周</span></span>
+          </div>
+          <div class="price">93,340.54<span>元/吨</span></div>
+          <div class="position-label"><span>近3个月价格位置</span><strong>60%</strong></div>
+          <div class="position-track"><span style="left:59.9%"></span></div>
+        </article>
+        
+        <article class="metal-card">
+          <div class="metal-head">
+            <div>
+              <h2>锡</h2>
+              <span class="unit">元/吨</span>
+            </div>
+            <span class="change up"><span>+3.36%</span><span class="change-label">较上周</span></span>
+          </div>
+          <div class="price">415,680.00<span>元/吨</span></div>
+          <div class="position-label"><span>近3个月价格位置</span><strong>73%</strong></div>
+          <div class="position-track"><span style="left:73.5%"></span></div>
+        </article>
+        
+        <article class="metal-card">
+          <div class="metal-head">
+            <div>
+              <h2>黄金</h2>
+              <span class="unit">元/克</span>
+            </div>
+            <span class="change down"><span>-0.24%</span><span class="change-label">较上周</span></span>
+          </div>
+          <div class="price">896.22<span>元/克</span></div>
+          <div class="position-label"><span>近3个月价格位置</span><strong>4%</strong></div>
+          <div class="position-track"><span style="left:4.0%"></span></div>
+        </article>
+        </div>
+    </section>
+    <section aria-labelledby="trend-title">
+      <div class="section-head"><h2 id="trend-title" class="section-title">价格趋势</h2><span class="section-meta">近3个月</span></div>
+      <div class="trend-grid">
+    <div class="trend-chart">
+      <div class="chart-caption"><span>白银 · 价格趋势（近3个月）</span><strong>13.06</strong></div>
+      <svg viewBox="0 0 320 166" role="img" aria-label="白银价格趋势图">
+        <line x1="42" y1="14" x2="42" y2="128" class="chart-axis" />
+        <line x1="42" y1="128" x2="308" y2="128" class="chart-axis" />
+        <line x1="42" y1="14.0" x2="308" y2="14.0" class="chart-grid" /><text x="0" y="18.0" class="chart-tick">17.58</text><line x1="42" y1="71.0" x2="308" y2="71.0" class="chart-grid" /><text x="0" y="75.0" class="chart-tick">15.25</text><line x1="42" y1="128.0" x2="308" y2="128.0" class="chart-grid" /><text x="0" y="132.0" class="chart-tick">12.93</text>
+        <line x1="42.0" y1="14" x2="42.0" y2="128" class="chart-month" /><text x="42.0" y="156" text-anchor="middle" class="chart-month-label">4月</text><line x1="66.2" y1="14" x2="66.2" y2="128" class="chart-month" /><text x="66.2" y="156" text-anchor="middle" class="chart-month-label">5月</text><line x1="187.1" y1="14" x2="187.1" y2="128" class="chart-month" /><text x="187.1" y="156" text-anchor="middle" class="chart-month-label">6月</text><line x1="283.8" y1="14" x2="283.8" y2="128" class="chart-month" /><text x="283.8" y="156" text-anchor="middle" class="chart-month-label">7月</text>
+        <polyline points="42.0,34.0 66.2,36.3 90.4,14.0 114.5,32.3 138.7,38.1 162.9,40.9 187.1,76.9 211.3,82.6 235.5,92.1 259.6,128.0 283.8,120.2 308.0,124.7" class="chart-line" />
+        <circle cx="308.0" cy="124.7" r="3.5" class="chart-dot" />
+      </svg>
+      <div class="trend-stats">
+        <div><span>区间涨跌</span><strong class="down">-22.09%</strong></div>
+        <div><span>区间最高</span><strong>17.58</strong></div>
+        <div><span>区间最低</span><strong>12.93</strong></div>
+        <div><span>较上周</span><strong>-1.41%</strong></div>
+      </div>
+    </div>
+    
+    <div class="trend-chart">
+      <div class="chart-caption"><span>铜 · 价格趋势（近3个月）</span><strong>93,340.54</strong></div>
+      <svg viewBox="0 0 320 166" role="img" aria-label="铜价格趋势图">
+        <line x1="42" y1="14" x2="42" y2="128" class="chart-axis" />
+        <line x1="42" y1="128" x2="308" y2="128" class="chart-axis" />
+        <line x1="42" y1="14.0" x2="308" y2="14.0" class="chart-grid" /><text x="0" y="18.0" class="chart-tick">96,055.08</text><line x1="42" y1="71.0" x2="308" y2="71.0" class="chart-grid" /><text x="0" y="75.0" class="chart-tick">92,670.65</text><line x1="42" y1="128.0" x2="308" y2="128.0" class="chart-grid" /><text x="0" y="132.0" class="chart-tick">89,286.21</text>
+        <line x1="42.0" y1="14" x2="42.0" y2="128" class="chart-month" /><text x="42.0" y="156" text-anchor="middle" class="chart-month-label">4月</text><line x1="66.2" y1="14" x2="66.2" y2="128" class="chart-month" /><text x="66.2" y="156" text-anchor="middle" class="chart-month-label">5月</text><line x1="187.1" y1="14" x2="187.1" y2="128" class="chart-month" /><text x="187.1" y="156" text-anchor="middle" class="chart-month-label">6月</text><line x1="283.8" y1="14" x2="283.8" y2="128" class="chart-month" /><text x="283.8" y="156" text-anchor="middle" class="chart-month-label">7月</text>
+        <polyline points="42.0,105.1 66.2,128.0 90.4,53.7 114.5,56.8 138.7,29.9 162.9,30.9 187.1,56.5 211.3,14.0 235.5,32.4 259.6,83.4 283.8,89.3 308.0,59.7" class="chart-line" />
+        <circle cx="308.0" cy="59.7" r="3.5" class="chart-dot" />
+      </svg>
+      <div class="trend-stats">
+        <div><span>区间涨跌</span><strong class="up">+2.97%</strong></div>
+        <div><span>区间最高</span><strong>96,055.08</strong></div>
+        <div><span>区间最低</span><strong>89,286.21</strong></div>
+        <div><span>较上周</span><strong>+1.91%</strong></div>
+      </div>
+    </div>
+    
+    <div class="trend-chart">
+      <div class="chart-caption"><span>锡 · 价格趋势（近3个月）</span><strong>415,680.00</strong></div>
+      <svg viewBox="0 0 320 166" role="img" aria-label="锡价格趋势图">
+        <line x1="42" y1="14" x2="42" y2="128" class="chart-axis" />
+        <line x1="42" y1="128" x2="308" y2="128" class="chart-axis" />
+        <line x1="42" y1="14.0" x2="308" y2="14.0" class="chart-grid" /><text x="0" y="18.0" class="chart-tick">425,960.00</text><line x1="42" y1="71.0" x2="308" y2="71.0" class="chart-grid" /><text x="0" y="75.0" class="chart-tick">406,590.00</text><line x1="42" y1="128.0" x2="308" y2="128.0" class="chart-grid" /><text x="0" y="132.0" class="chart-tick">387,220.00</text>
+        <line x1="42.0" y1="14" x2="42.0" y2="128" class="chart-month" /><text x="42.0" y="156" text-anchor="middle" class="chart-month-label">4月</text><line x1="90.4" y1="14" x2="90.4" y2="128" class="chart-month" /><text x="90.4" y="156" text-anchor="middle" class="chart-month-label">5月</text><line x1="187.1" y1="14" x2="187.1" y2="128" class="chart-month" /><text x="187.1" y="156" text-anchor="middle" class="chart-month-label">6月</text><line x1="283.8" y1="14" x2="283.8" y2="128" class="chart-month" /><text x="283.8" y="156" text-anchor="middle" class="chart-month-label">7月</text>
+        <polyline points="42.0,126.8 66.2,127.6 90.4,14.0 114.5,63.7 138.7,27.7 162.9,17.9 187.1,37.9 211.3,66.9 235.5,48.2 259.6,128.0 283.8,84.0 308.0,44.3" class="chart-line" />
+        <circle cx="308.0" cy="44.3" r="3.5" class="chart-dot" />
+      </svg>
+      <div class="trend-stats">
+        <div><span>区间涨跌</span><strong class="up">+7.24%</strong></div>
+        <div><span>区间最高</span><strong>425,960.00</strong></div>
+        <div><span>区间最低</span><strong>387,220.00</strong></div>
+        <div><span>较上周</span><strong>+3.36%</strong></div>
+      </div>
+    </div>
+    
+    <div class="trend-chart">
+      <div class="chart-caption"><span>黄金 · 价格趋势（近3个月）</span><strong>896.22</strong></div>
+      <svg viewBox="0 0 320 166" role="img" aria-label="黄金价格趋势图">
+        <line x1="42" y1="14" x2="42" y2="128" class="chart-axis" />
+        <line x1="42" y1="128" x2="308" y2="128" class="chart-axis" />
+        <line x1="42" y1="14.0" x2="308" y2="14.0" class="chart-grid" /><text x="0" y="18.0" class="chart-tick">1,036.36</text><line x1="42" y1="71.0" x2="308" y2="71.0" class="chart-grid" /><text x="0" y="75.0" class="chart-tick">963.38</text><line x1="42" y1="128.0" x2="308" y2="128.0" class="chart-grid" /><text x="0" y="132.0" class="chart-tick">890.39</text>
+        <line x1="42.0" y1="14" x2="42.0" y2="128" class="chart-month" /><text x="42.0" y="156" text-anchor="middle" class="chart-month-label">4月</text><line x1="66.2" y1="14" x2="66.2" y2="128" class="chart-month" /><text x="66.2" y="156" text-anchor="middle" class="chart-month-label">5月</text><line x1="187.1" y1="14" x2="187.1" y2="128" class="chart-month" /><text x="187.1" y="156" text-anchor="middle" class="chart-month-label">6月</text><line x1="283.8" y1="14" x2="283.8" y2="128" class="chart-month" /><text x="283.8" y="156" text-anchor="middle" class="chart-month-label">7月</text>
+        <polyline points="42.0,14.0 66.2,29.7 90.4,17.2 114.5,47.2 138.7,51.2 162.9,47.1 187.1,85.7 211.3,106.3 235.5,106.7 259.6,128.0 283.8,121.8 308.0,123.5" class="chart-line" />
+        <circle cx="308.0" cy="123.5" r="3.5" class="chart-dot" />
+      </svg>
+      <div class="trend-stats">
+        <div><span>区间涨跌</span><strong class="down">-13.52%</strong></div>
+        <div><span>区间最高</span><strong>1,036.36</strong></div>
+        <div><span>区间最低</span><strong>890.39</strong></div>
+        <div><span>较上周</span><strong>-0.24%</strong></div>
+      </div>
+    </div>
+    </div>
+    </section>
+    <section aria-labelledby="drivers-title">
+      <div class="section-head"><h2 id="drivers-title" class="section-title">本周驱动</h2><span class="section-meta">事件与供需</span></div>
+      <div class="driver-grid">
+        <article class="driver-card">
+          <div class="driver-card-head"><strong>白银</strong><span>美元变弱，但白银仍小幅回落</span></div>
+          <ul class="driver-list"><li><span class="driver-type">外部环境</span>7月9日美元走弱、美国国债收益率回落，白银当天反弹，但没有扭转本周的小幅下跌。 <a href="https://www.kitco.com/news/article/2026-07-09/gold-rebounds-silver-soars-easing-oil-softer-dollar-lift-metals" target="_blank" rel="noreferrer">来源</a></li><li><span class="driver-type">库存和买货</span>这周没有拿到白银库存和实物买货数据，所以暂时无法判断供需有没有变好。 <span class="source-note">数据复核规则</span></li><li><span class="driver-type">价格表现</span>白银本周小幅下跌，说明短期压力暂时盖过了市场对白银供应偏紧的期待。 <span class="source-note">统一周度数据</span></li><li><span class="driver-type">注意事项</span>白银既像黄金一样受金融市场影响，也会受到工业需求影响，不能只看一个原因。 <span class="source-note">数据复核规则</span></li></ul>
+          <p class="driver-conclusion"><strong>当前结论</strong>白银本周仍小幅下跌，美元走弱的利好没有转化为持续上涨，短期更接近震荡偏弱。</p>
+          <p class="driver-caveat">白银同时具有贵金属和工业金属属性，短期波动通常高于黄金。</p>
+        </article>
+        
+        <article class="driver-card">
+          <div class="driver-card-head"><strong>铜</strong><span>库存减少，企业开始补货</span></div>
+          <ul class="driver-list"><li><span class="driver-type">外部环境</span>7月10日市场信息显示美元走弱，基本金属整体上涨，为铜价提供共同的宏观支撑。 <a href="https://news.smm.cn/news/103998642" target="_blank" rel="noreferrer">来源</a></li><li><span class="driver-type">库存和买货</span>铜价回落后，下游企业开始逢低补货，库存减少和补货一起支持了铜价。 <a href="https://finance.sina.com.cn/wm/2026-07-10/doc-inihhrai8381929.shtml" target="_blank" rel="noreferrer">来源</a></li><li><span class="driver-type">价格表现</span>铜本周上涨2.76%，库存减少和下游补货是目前数据中最清晰的支持因素。 <span class="source-note">统一周度数据</span></li><li><span class="driver-type">注意事项</span>关税还没有正式实施，不能把这件事当成已经发生的成本冲击。 <span class="source-note">数据复核规则</span></li></ul>
+          <p class="driver-conclusion"><strong>当前结论</strong>铜本周偏强，库存减少和下游补货是较明确的支持因素，但这不代表涨势一定延续。</p>
+          <p class="driver-caveat">库存数据和期货价格口径不同，库存下降不等于未来价格必然上涨。</p>
+        </article>
+        
+        <article class="driver-card">
+          <div class="driver-card-head"><strong>锡</strong><span>库存减少，但高价压制买货</span></div>
+          <ul class="driver-list"><li><span class="driver-type">外部环境</span>7月10日美元走弱、基本金属普遍上涨，锡价也受到短线带动。 <a href="https://news.smm.cn/news/103998642" target="_blank" rel="noreferrer">来源</a></li><li><span class="driver-type">库存和买货</span>国内锡库存连续减少；同时缅甸矿山受到雨季和复产条件限制，锡的供应恢复还不稳定。 <a href="https://finance.eastmoney.com/a/202607063795310066.html" target="_blank" rel="noreferrer">来源</a></li><li><span class="driver-type">价格表现</span>锡价较高时，下游企业会减少马上采购；传统行业淡季也让需求偏弱，所以这次上涨更像库存和供应收紧带来的反弹。 <a href="https://news.metal.com/newscontent/103982828-macro-headwinds-weighed-tin-prices-retreated-after-a-rapid-rise-and-spot-tin-transactions-were-mired-in-a-high-price-su" target="_blank" rel="noreferrer">来源</a></li><li><span class="driver-type">注意事项</span>锡价波动较大，后续还要继续观察库存和供应变化。 <span class="source-note">数据复核规则</span></li></ul>
+          <p class="driver-conclusion"><strong>当前结论</strong>锡价上涨受到库存减少和供应不稳支持，但高价压制买货，短期更像供应收紧带来的反弹，而不是需求全面转强。</p>
+          <p class="driver-caveat">锡的价格波动较大，已补齐近3个月数据，但供需因果仍需持续跟踪。</p>
+        </article>
+        
+        <article class="driver-card">
+          <div class="driver-card-head"><strong>黄金</strong><span>美元变弱，黄金小幅回升</span></div>
+          <ul class="driver-list"><li><span class="driver-type">外部环境</span>7月9日美元走弱、美国国债收益率回落，黄金当天出现反弹。 <a href="https://www.kitco.com/news/article/2026-07-09/gold-rebounds-silver-soars-easing-oil-softer-dollar-lift-metals" target="_blank" rel="noreferrer">来源</a></li><li><span class="driver-type">库存和买货</span>这周没有拿到黄金库存和实物买货数据，所以暂时无法判断大家买黄金的需求强不强。 <span class="source-note">数据复核规则</span></li><li><span class="driver-type">价格表现</span>黄金本周小幅上涨，说明利好和压力同时存在，价格没有出现大幅变化。 <span class="source-note">统一周度数据</span></li><li><span class="driver-type">注意事项</span>目前不能确定美元、利率和真实买货需求各自影响了多少。 <span class="source-note">数据复核规则</span></li></ul>
+          <p class="driver-conclusion"><strong>当前结论</strong>本周黄金受到美元和收益率回落的短线支持，但涨幅很小，暂时不能判断趋势已经反转。</p>
+          <p class="driver-caveat">本周黄金仅小幅上涨，价格数据无法单独证明某一事件的具体贡献。</p>
+        </article>
+        </div>
+    </section>
+    <section aria-labelledby="sources-title">
+      <div class="section-head"><h2 id="sources-title" class="section-title">数据来源</h2><span class="section-meta">可追溯</span></div>
+      <div class="panel"><ul><li><strong>黄金</strong> · Yahoo Finance · GC=F</li><li><strong>白银</strong> · Yahoo Finance · SI=F</li><li><strong>铜</strong> · Yahoo Finance · HG=F</li><li><strong>锡</strong> · SHFE official · SN</li></ul></div>
+    </section>
+  </main>
+</body>
+</html>
