@@ -35,6 +35,7 @@ def main() -> int:
         performance.append({
             "metal": row["metal"],
             "price": clean_number(row["price_cny"]),
+            "week_close": clean_number(row["week_close_cny"]),
             "unit": row["display_unit"],
             "week_high": clean_number(row["week_high_cny"]),
             "week_low": clean_number(row["week_low_cny"]),

@@ -4,30 +4,33 @@
   "generated_by": "local_facts_only_demo",
   "external_ai_call": false,
   "language": "zh-CN",
-  "generated_at": "2026-07-11T10:58:53.917355+00:00",
+  "generated_at": "2026-07-11T11:25:27.721530+00:00",
   "week_end": "2026-07-10",
   "week_start": "2026-07-06",
   "market_snapshot": {
     "biggest_gainer": {
       "metal": "锡",
-      "change_pct": 3.356706
+      "change_pct": 4.493563
     },
     "biggest_loser": {
-      "metal": "白银",
-      "change_pct": -1.405751
+      "metal": "铜",
+      "change_pct": 0.622613
     },
     "one_sentence_summary": "本周金属价格表现分化：锡和铜上涨，黄金小幅上涨，白银小幅下跌。"
   },
   "metal_analysis": [
     {
       "metal": "白银",
-      "price": 13.060556,
+      "price": 13.159341,
+      "week_close": 13.060556,
+      "week_high": 13.667351,
+      "week_low": 12.615527,
       "unit": "人民币/克",
-      "weekly_change_pct": -1.405751,
+      "weekly_change_pct": 1.077594,
       "trend_12_weeks": "下跌",
       "facts": [
-        "本周收盘价为 13.06 人民币/克。",
-        "本周人民币口径价格下跌 1.41%。",
+        "本周收盘价为 13.16 人民币/克。",
+        "本周人民币口径价格上涨 1.08%。",
         "当前可用趋势数据为 12 周。"
       ],
       "interpretation": "现有数据只能确认价格变化，无法确认具体原因。",
@@ -35,13 +38,16 @@
     },
     {
       "metal": "铜",
-      "price": 93340.536308,
+      "price": 92429.678595,
+      "week_close": 93340.536308,
+      "week_high": 93535.945048,
+      "week_low": 90093.440126,
       "unit": "人民币/吨",
-      "weekly_change_pct": 1.914683,
+      "weekly_change_pct": 0.622613,
       "trend_12_weeks": "震荡",
       "facts": [
-        "本周收盘价为 93340.54 人民币/吨。",
-        "本周人民币口径价格上涨 1.91%。",
+        "本周收盘价为 92429.68 人民币/吨。",
+        "本周人民币口径价格上涨 0.62%。",
         "当前可用趋势数据为 12 周。"
       ],
       "interpretation": "现有数据只能确认价格变化，无法确认具体原因。",
@@ -49,13 +55,16 @@
     },
     {
       "metal": "锡",
-      "price": 415680.0,
+      "price": 412620.0,
+      "week_close": 415680.0,
+      "week_high": 419350.0,
+      "week_low": 401100.0,
       "unit": "人民币/吨",
-      "weekly_change_pct": 3.356706,
+      "weekly_change_pct": 4.493563,
       "trend_12_weeks": "上涨",
       "facts": [
-        "本周收盘价为 415680.00 人民币/吨。",
-        "本周人民币口径价格上涨 3.36%。",
+        "本周收盘价为 412620.00 人民币/吨。",
+        "本周人民币口径价格上涨 4.49%。",
         "当前可用趋势数据为 12 周。"
       ],
       "interpretation": "现有数据只能确认价格变化，无法确认具体原因。",
@@ -63,13 +72,16 @@
     },
     {
       "metal": "黄金",
-      "price": 896.216788,
+      "price": 900.266279,
+      "week_close": 896.216788,
+      "week_high": 916.620505,
+      "week_low": 885.227385,
       "unit": "人民币/克",
-      "weekly_change_pct": -0.239955,
+      "weekly_change_pct": 1.588295,
       "trend_12_weeks": "下跌",
       "facts": [
-        "本周收盘价为 896.22 人民币/克。",
-        "本周人民币口径价格下跌 0.24%。",
+        "本周收盘价为 900.27 人民币/克。",
+        "本周人民币口径价格上涨 1.59%。",
         "当前可用趋势数据为 12 周。"
       ],
       "interpretation": "现有数据只能确认价格变化，无法确认具体原因。",

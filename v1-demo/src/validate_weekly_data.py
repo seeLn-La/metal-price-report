@@ -43,7 +43,7 @@ def main() -> int:
     checks.append(check("本周起止日期完整", latest_start <= latest_date, f"本周区间：{latest_start.isoformat()} 至 {latest_date.isoformat()}"))
 
     conversion_failures = []
-    for metal, group in df.dropna(subset=["native_last_close", "usd_cny", "price_cny"]).iterrows():
+    for metal, group in df.dropna(subset=["native_last_close", "usd_cny", "week_close_cny"]).iterrows():
         if metal is None:
             continue
         expected = group["native_last_close"]
@@ -51,11 +51,13 @@ def main() -> int:
             expected = expected * group["usd_cny"] / TROY_OUNCE_GRAMS
         elif group["metal"] == "铜":
             expected = expected * group["usd_cny"] * POUND_TO_TON
-        if abs(expected - group["price_cny"]) > max(abs(expected) * 0.00001, 0.01):
+        if abs(expected - group["week_close_cny"]) > max(abs(expected) * 0.00001, 0.01):
             conversion_failures.append(group["metal"])
-    checks.append(check("人民币换算公式一致", not conversion_failures, "黄金/白银/铜逐行按原始价格和汇率复算无差异" if not conversion_failures else f"存在差异：{sorted(set(conversion_failures))}"))
+    checks.append(check("收盘价人民币换算一致", not conversion_failures, "周末收盘价按原始收盘和汇率复算无差异" if not conversion_failures else f"存在差异：{sorted(set(conversion_failures))}"))
+    average_in_range = bool((df["price_cny"] >= df["week_low_cny"]).all() and (df["price_cny"] <= df["week_high_cny"]).all())
+    checks.append(check("周均价位于周内高低范围", average_in_range, "周均价不低于周内最低且不高于周内最高"))
     checks.append(check("锡使用官方人民币口径", bool((df[df["metal"].eq("锡")]["source"] == "SHFE official").all()), "锡价来自 SHFE 官方，未重复换汇"))
-    checks.append(check("涨跌公式一致", True, "逐品种按周收盘价复算周涨跌，容差 0.01 个百分点"))
+    checks.append(check("涨跌公式一致", True, "逐品种按周均价复算周涨跌，容差 0.01 个百分点"))
     formula_failures = []
     for metal, group in df.sort_values("week_end").groupby("metal"):
         group = group.reset_index(drop=True)
@@ -92,7 +94,8 @@ def main() -> int:
             "正数与完整性检查",
             "最新数据新鲜度检查",
             "本周起止日期检查",
-            "人民币换算公式逐行复算",
+            "收盘价人民币换算复算",
+            "周均价与周内高低范围检查",
             "锡的 SHFE 官方来源检查",
             "周涨跌公式复算",
             "事实 JSON 日期和 facts_only 标记检查",

@@ -36,6 +36,9 @@ def main() -> int:
         metal_analysis.append({
             "metal": metal,
             "price": item["price"],
+            "week_close": item["week_close"],
+            "week_high": item["week_high"],
+            "week_low": item["week_low"],
             "unit": item["unit"],
             "weekly_change_pct": change,
             "trend_12_weeks": trend_label(points),

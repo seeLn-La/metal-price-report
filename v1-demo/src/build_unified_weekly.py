@@ -47,12 +47,12 @@ def aggregate_weekly(daily: pd.DataFrame, config: dict, metal: str) -> pd.DataFr
         daily["low_cny"] = daily["native_low"] * daily["usd_cny"] * POUND_TO_TON
     daily = daily.dropna(subset=["date", "native_close", "price_cny"])
     weekly = daily.sort_values("date").groupby("week", as_index=False).agg(
-        week_start=("date", "min"), week_end=("date", "max"), price_cny=("price_cny", "last"), week_high_cny=("high_cny", "max"),
-        week_low_cny=("low_cny", "min"), native_last_close=("native_close", "last"),
+        week_start=("date", "min"), week_end=("date", "max"), price_cny=("price_cny", "mean"), week_close_cny=("price_cny", "last"), week_high_cny=("high_cny", "max"),
+        week_low_cny=("low_cny", "min"), native_avg_close=("native_close", "mean"), native_last_close=("native_close", "last"),
         usd_cny=("usd_cny", "last"), observations=("price_cny", "count"),
     )
     weekly["weekly_change_cny_pct"] = weekly["price_cny"].pct_change() * 100
-    weekly["weekly_change_native_pct"] = weekly["native_last_close"].pct_change() * 100
+    weekly["weekly_change_native_pct"] = weekly["native_avg_close"].pct_change() * 100
     weekly["metal"] = metal
     weekly["source"] = config["source"]
     weekly["market"] = config["market"]
@@ -83,7 +83,7 @@ def main() -> int:
     unified["week_end"] = pd.to_datetime(unified["week_end"]).dt.strftime("%Y-%m-%d")
     unified = unified[[
         "week_start", "week_end", "metal", "source", "market", "identifier", "price_cny", "display_unit",
-        "week_high_cny", "week_low_cny", "weekly_change_cny_pct", "native_last_close",
+        "week_close_cny", "week_high_cny", "week_low_cny", "weekly_change_cny_pct", "native_avg_close", "native_last_close",
         "native_unit", "weekly_change_native_pct", "usd_cny", "fx_ticker", "observations",
     ]].sort_values(["week_end", "metal"])
     unified.to_csv(PROCESSED_DIR / "metal_prices_unified_weekly.csv", index=False)

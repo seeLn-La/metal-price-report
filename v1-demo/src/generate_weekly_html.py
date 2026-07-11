@@ -69,7 +69,7 @@ def trend_chart(metal: str, points: list[dict]) -> str:
         y_ticks.append(f'<line x1="{left}" y1="{y:.1f}" x2="{width-right}" y2="{y:.1f}" class="chart-grid" /><text x="0" y="{y+4:.1f}" class="chart-tick">{price(value)}</text>')
     return f"""
     <div class="trend-chart">
-      <div class="chart-caption"><span>{html.escape(metal)} · 价格趋势（近3个月）</span><strong>{price(values[-1])}</strong></div>
+      <div class="chart-caption"><span>{html.escape(metal)} · 周均价趋势（近3个月）</span><strong>{price(values[-1])}</strong></div>
       <svg viewBox="0 0 {width} {height}" role="img" aria-label="{html.escape(metal)}价格趋势图">
         <line x1="{left}" y1="{top}" x2="{left}" y2="{height-bottom}" class="chart-axis" />
         <line x1="{left}" y1="{height-bottom}" x2="{width-right}" y2="{height-bottom}" class="chart-axis" />
@@ -79,9 +79,9 @@ def trend_chart(metal: str, points: list[dict]) -> str:
         <circle cx="{last_x}" cy="{last_y}" r="3.5" class="chart-dot" />
       </svg>
       <div class="trend-stats">
-        <div><span>区间涨跌</span><strong class="{period_tone}">{pct(period_change)}</strong></div>
-        <div><span>区间最高</span><strong>{price(high)}</strong></div>
-        <div><span>区间最低</span><strong>{price(low)}</strong></div>
+        <div><span>3个月均价涨跌</span><strong class="{period_tone}">{pct(period_change)}</strong></div>
+        <div><span>均价最高</span><strong>{price(high)}</strong></div>
+        <div><span>均价最低</span><strong>{price(low)}</strong></div>
         <div><span>较上周</span><strong>{latest_change_text}</strong></div>
       </div>
     </div>
@@ -121,8 +121,10 @@ def main() -> int:
             </div>
             <span class="change {tone}"><span>{pct(change)}</span><span class="change-label">较上周</span></span>
           </div>
+          <div class="price-label">本周均价</div>
           <div class="price">{price(item['price'])}<span>{html.escape(unit_label(item['unit']))}</span></div>
           { '<div class="price-note">国际市场基准价，不含首饰加工费和品牌溢价</div>' if item['metal'] == '黄金' else '' }
+          <div class="secondary-prices"><span>周末收盘 {price(item.get('week_close', item['price']))}</span><span>周内高低 {price(item['week_high'])} / {price(item['week_low'])}</span></div>
           <div class="position-label"><span>近3个月价格位置</span><strong>{position:.0f}%</strong></div>
           <div class="position-track"><span style="left:{position:.1f}%"></span></div>
         </article>
@@ -172,9 +174,11 @@ def main() -> int:
     .metal-head h2 {{ margin:0; font-size:20px; }}
     .unit {{ color:var(--muted); font-size:12px; }}
     .change {{ display:flex; align-items:baseline; gap:5px; font-size:18px; font-weight:700; white-space:nowrap; }}
-    .price {{ margin:18px 0 8px; font-size:28px; font-weight:750; line-height:1; }}
+    .price-label {{ margin-top:18px; color:var(--muted); font-size:11px; }}
+    .price {{ margin:3px 0 8px; font-size:28px; font-weight:750; line-height:1; }}
     .price span {{ margin-left:5px; color:var(--muted); font-size:12px; font-weight:400; }}
     .price-note {{ margin-top:-8px; color:var(--muted); font-size:11px; }}
+    .secondary-prices {{ display:flex; flex-direction:column; gap:2px; margin-top:10px; color:var(--muted); font-size:11px; }}
     .change-label {{ color:var(--muted); font-size:11px; font-weight:400; }}
     .analysis-intro {{ margin:0 0 12px; color:var(--muted); font-size:13px; }}
     .position-track {{ position:relative; height:6px; margin-top:6px; border-radius:999px; background:linear-gradient(90deg,#d8e9df,#e9d9b4,#eed0cb); }}
@@ -233,7 +237,7 @@ def main() -> int:
       </div>
     </section>
     <section aria-labelledby="prices-title">
-      <div class="section-head"><h2 id="prices-title" class="section-title">价格与变化</h2><span class="section-meta">较上周</span></div>
+      <div class="section-head"><h2 id="prices-title" class="section-title">价格与变化</h2><span class="section-meta">较上周均价</span></div>
       <p class="analysis-intro">价格位置表示当前价格在近3个月区间中的位置：0% 接近最低价，100% 接近最高价。</p>
       <div class="metal-grid">{''.join(cards)}</div>
     </section>
