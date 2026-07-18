@@ -1,0 +1,146 @@
+{
+  "schema_version": "2.0",
+  "section_title": "本周价格解读",
+  "reader_note": "以下内容区分已观察到的事实和可能影响因素，不代表确定因果关系。",
+  "evidence_levels": {
+    "较强": "有事件资料，并且价格在时间上出现了相应变化；仍不等于证明全部因果。",
+    "中等": "有事件资料或市场报道支持，但缺少完整的供需数据。",
+    "较弱": "只有间接线索，暂时不能作为主要解释。",
+    "不足": "目前没有足够资料支持该判断。"
+  },
+  "metals": {
+    "黄金": {
+      "headline": "短线回升，但还没有改变中期偏弱",
+      "reader_summary": "黄金本周出现回升，不过这更像短线反弹，暂时不能理解为趋势已经反转。",
+      "factors": [
+        {
+          "factor": "美元和美国国债利率",
+          "plain_explanation": "7月9日美元走弱、美国国债利率下降，黄金当天出现反弹。简单说，美元资产的吸引力下降时，黄金会得到一些短线关注。",
+          "possible_effect": "可能支持黄金上涨",
+          "evidence_level": "中等",
+          "observed_date": "2026-07-09",
+          "source": "Kitco",
+          "url": "https://www.kitco.com/news/article/2026-07-09/gold-rebounds-silver-soars-easing-oil-softer-dollar-lift-metals",
+          "limitation": "只能说明事件和价格在时间上同步，不能证明它解释了全部涨幅。"
+        }
+      ],
+      "evidence_gaps": [
+        "本周没有黄金库存和实物采购数据，无法判断真实买货需求是否增强。",
+        "目前不能拆分美元、利率和实际买货需求各自对价格的影响。"
+      ],
+      "conclusion": "当前更适合解释为短线回升，而不是中期趋势已经反转。",
+      "conclusion_status": "mixed",
+      "watch_next_week": [
+        "观察美元、美国国债利率和黄金价格是否继续同方向变化。"
+      ],
+      "caveat": "价格数据本身无法证明某一个事件造成了具体涨幅。"
+    },
+    "白银": {
+      "headline": "受到短线支持，但工业需求压力仍在",
+      "reader_summary": "白银既有贵金属属性，也会受到工业需求影响。本周的短线反弹没有改变整体偏弱表现。",
+      "factors": [
+        {
+          "factor": "美元和美国国债利率",
+          "plain_explanation": "7月9日美元走弱、美国国债利率下降，白银当天出现反弹，说明它也受到贵金属市场环境的短线支持。",
+          "possible_effect": "可能支持白银上涨",
+          "evidence_level": "中等",
+          "observed_date": "2026-07-09",
+          "source": "Kitco",
+          "url": "https://www.kitco.com/news/article/2026-07-09/gold-rebounds-silver-soars-easing-oil-softer-dollar-lift-metals",
+          "limitation": "这只能解释当天的反应，不能证明该因素足以改变整周方向。"
+        }
+      ],
+      "evidence_gaps": [
+        "本周没有白银库存和实物采购数据，无法判断供需是否改善。",
+        "白银同时受到金融市场和工业需求影响，目前没有足够数据拆分两类影响。"
+      ],
+      "conclusion": "美元走弱带来的支持没有转化为持续上涨，短期仍更接近震荡偏弱。",
+      "conclusion_status": "weak",
+      "watch_next_week": [
+        "观察白银是否继续跟随黄金，还是重新受到工业需求预期拖累。"
+      ],
+      "caveat": "白银的价格波动通常高于黄金，不能只用黄金的走势解释白银。"
+    },
+    "铜": {
+      "headline": "价格偏强，库存减少和补货是重要线索",
+      "reader_summary": "铜价本周小幅走强，市场上的可用库存减少、部分企业逢低补货，可能给价格提供了支持。",
+      "factors": [
+        {
+          "factor": "全球市场环境",
+          "plain_explanation": "7月10日市场信息显示美元走弱，基本金属整体上涨，铜价也受到共同的市场环境带动。",
+          "possible_effect": "可能支持铜价上涨",
+          "evidence_level": "中等",
+          "observed_date": "2026-07-10",
+          "source": "上海有色网",
+          "url": "https://news.smm.cn/news/103998642",
+          "limitation": "基本金属一起上涨只能说明市场环境较友好，不能证明铜价全部由美元变化造成。"
+        },
+        {
+          "factor": "库存和企业补货",
+          "plain_explanation": "铜价回落后，部分下游企业开始逢低补货，市场库存因此减少。通俗地说，市场上可立即拿到的货变少了。",
+          "possible_effect": "可能支持铜价上涨",
+          "evidence_level": "中等",
+          "observed_date": "2026-07-10",
+          "source": "新浪财经",
+          "url": "https://finance.sina.com.cn/wm/2026-07-10/doc-inihhrai8381929.shtml",
+          "limitation": "库存数据和期货价格不是完全相同的统计口径，库存减少不代表价格一定继续上涨。"
+        }
+      ],
+      "evidence_gaps": [
+        "目前没有足够数据判断补货是短期低价采购，还是需求真正全面恢复。"
+      ],
+      "conclusion": "本周铜价偏强，库存减少和企业补货是目前较清晰的支持线索，但不能据此判断涨势一定延续。",
+      "conclusion_status": "supported",
+      "watch_next_week": [
+        "观察库存是否继续减少，以及企业补货是否持续。",
+        "关税尚未正式实施，不能把潜在影响写成已经发生的成本冲击。"
+      ],
+      "caveat": "库存减少是支持价格的线索，不等于未来价格必然上涨。"
+    },
+    "锡": {
+      "headline": "供应端偏紧，但高价限制企业采购",
+      "reader_summary": "锡价本周上涨，主要看到的是库存和供应方面的支持；但价格较高又让下游企业不愿意立即大量采购。",
+      "factors": [
+        {
+          "factor": "全球市场环境",
+          "plain_explanation": "7月10日美元走弱、基本金属普遍上涨，锡价也受到这轮整体上涨的短线带动。",
+          "possible_effect": "可能支持锡价上涨",
+          "evidence_level": "中等",
+          "observed_date": "2026-07-10",
+          "source": "上海有色网",
+          "url": "https://news.smm.cn/news/103998642",
+          "limitation": "整体上涨只能说明共同市场环境较好，不能单独证明锡的供需已经改善。"
+        },
+        {
+          "factor": "库存和供应恢复",
+          "plain_explanation": "国内锡库存连续减少，同时缅甸矿山受到雨季和复产条件限制，供应恢复还不稳定。通俗地说，市场担心后续可获得的锡不够顺畅。",
+          "possible_effect": "可能支持锡价上涨",
+          "evidence_level": "中等",
+          "observed_date": "2026-07-10",
+          "source": "东方财富 / 新浪财经",
+          "url": "https://finance.eastmoney.com/a/202607063795310066.html",
+          "limitation": "供应不稳定是市场线索，不等于实际供应量已经大幅下降。"
+        },
+        {
+          "factor": "高价下的采购观望",
+          "plain_explanation": "锡价较高时，下游企业会减少马上采购；传统行业淡季也会让需求偏弱。也就是说，价格上涨并不代表所有企业都在积极买货。",
+          "possible_effect": "可能限制价格继续上涨",
+          "evidence_level": "中等",
+          "observed_date": "2026-07-10",
+          "source": "上海有色网",
+          "url": "https://news.metal.com/newscontent/103982828-macro-headwinds-weighed-tin-prices-retreated-after-a-rapid-rise-and-spot-tin-transactions-were-mired-in-a-high-price-su",
+          "limitation": "采购偏弱和价格上涨可以同时存在，不能仅凭价格判断需求全面转强。"
+        }
+      ],
+      "evidence_gaps": [
+        "还需要继续观察库存、矿山复产和下游实际成交，才能判断供应偏紧是否会持续。"
+      ],
+      "conclusion": "这次上涨更像供应和库存偏紧带来的反弹，而不是需求全面转强。",
+      "conclusion_status": "mixed",
+      "watch_next_week": [
+        "观察库存是否继续减少、矿山供应是否恢复，以及高价下实际采购是否回升。"
+      ],
+      "caveat": "锡价波动较大，短期上涨和下游采购偏弱可以同时发生。"
+    }
+  }
+}

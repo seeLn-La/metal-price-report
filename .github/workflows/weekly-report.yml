@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "v1-demo/**"
+      - "metal-intelligence/**"
   schedule:
     # Saturday 10:00 China Standard Time, after the Friday market close.
     - cron: "0 2 * * 6"
@@ -27,18 +27,18 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: python -m pip install -r v1-demo/requirements.txt
+        run: python -m pip install -r metal-intelligence/requirements.txt
 
       - name: Refresh, validate, and render
-        run: python v1-demo/src/run_weekly_pipeline.py --tin-days 365 --workers 8
+        run: python metal-intelligence/src/run_weekly_pipeline.py --tin-days 365 --workers 8
 
       - name: Deploy weekly page
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./v1-demo/public
+          publish_dir: ./metal-intelligence/public
           publish_branch: gh-pages
-          destination_dir: v1-demo
+          destination_dir: metal-intelligence
           keep_files: true
           commit_message: "部署：更新金属市场周报"
 
@@ -48,13 +48,13 @@ jobs:
         with:
           name: metal-weekly-${{ github.run_number }}
           path: |
-            v1-demo/data/processed/*.json
-            v1-demo/reports/*.json
-            v1-demo/public/weekly/index.html
+            metal-intelligence/data/processed/*.json
+            metal-intelligence/reports/*.json
+            metal-intelligence/public/weekly/index.html
 
       - name: Send Bark notification
         env:
           BARK_KEY: ${{ secrets.BARK_KEY }}
           BARK_BASE_URL: ${{ secrets.BARK_BASE_URL }}
-          WEEKLY_REPORT_URL: https://seeln-la.github.io/metal-price-report/v1-demo/weekly/index.html
-        run: python v1-demo/src/notify_weekly_bark.py
+          WEEKLY_REPORT_URL: https://seeln-la.github.io/metal-price-report/metal-intelligence/weekly/index.html
+        run: python metal-intelligence/src/notify_weekly_bark.py

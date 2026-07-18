@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "ticker": "CNY=X",
+  "source": "Yahoo Finance",
+  "fetched_at": "2026-07-18T11:20:17.468770+00:00",
+  "start_date": "2025-07-17",
+  "end_date": "2026-07-18",
+  "row_count": 261,
+  "missing_rate": 0,
+  "unit": "人民币/美元"
+}

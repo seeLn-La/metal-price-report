@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-07-18T11:26:07.236307+00:00",
+  "latest_week_end": "2026-07-17",
+  "latest_week_rows": 4,
+  "metals_in_latest_week": [
+    "白银",
+    "铜",
+    "锡",
+    "黄金"
+  ],
+  "display_currency": "CNY",
+  "display_units": {
+    "黄金": "人民币/克",
+    "白银": "人民币/克",
+    "铜": "人民币/吨",
+    "锡": "人民币/吨"
+  },
+  "fx_source": "Yahoo Finance CNY=X for USD-denominated contracts",
+  "fx_conversion_status": "applied_to_gold_silver_copper",
+  "weekly_change_cny_comparable": true,
+  "raw_price_level_comparable": false,
+  "missing_metals_in_latest_week": [],
+  "conversion_constants": {
+    "troy_ounce_grams": 31.1034768,
+    "pound_to_ton": 2204.62262185
+  }
+}

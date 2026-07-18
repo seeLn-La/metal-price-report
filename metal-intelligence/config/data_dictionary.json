@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "scope": "metal_weekly_report",
+  "report_period": {
+    "weekly_change": "本周均价相对上周均价",
+    "trend_12_weeks": "最近12个可用周的周均价",
+    "freshness_limit_days": 7
+  },
+  "source_contract": {
+    "黄金": {
+      "market": "COMEX Gold Futures",
+      "access_provider": "Yahoo Finance",
+      "identifier": "GC=F",
+      "native_unit": "美元/金衡盎司",
+      "display_unit": "人民币/克",
+      "conversion": "native_close * usd_cny / 31.1034768"
+    },
+    "白银": {
+      "market": "COMEX Silver Futures",
+      "access_provider": "Yahoo Finance",
+      "identifier": "SI=F",
+      "native_unit": "美元/金衡盎司",
+      "display_unit": "人民币/克",
+      "conversion": "native_close * usd_cny / 31.1034768"
+    },
+    "铜": {
+      "market": "COMEX Copper Futures",
+      "access_provider": "Yahoo Finance",
+      "identifier": "HG=F",
+      "native_unit": "美元/磅",
+      "display_unit": "人民币/吨",
+      "conversion": "native_close * usd_cny * 2204.62262185"
+    },
+    "锡": {
+      "market": "SHFE Tin Futures",
+      "access_provider": "SHFE official",
+      "identifier": "SN",
+      "native_unit": "人民币/吨",
+      "display_unit": "人民币/吨",
+      "conversion": "native_close"
+    }
+  },
+  "fields": {
+    "date": "交易日期，ISO YYYY-MM-DD",
+    "open": "原始日线开盘价",
+    "high": "原始日线最高价",
+    "low": "原始日线最低价",
+    "close": "原始日线收盘价",
+    "usd_cny": "同一交易日人民币/美元汇率",
+    "price_cny": "按来源口径转换后的人民币日均价或周均价",
+    "week_close_cny": "周内最后一个交易日的人民币收盘价",
+    "week_high_cny": "周内人民币价格最高值",
+    "week_low_cny": "周内人民币价格最低值",
+    "weekly_change_cny_pct": "本周人民币周均价相对上周人民币周均价的百分比变化",
+    "source": "数据获取来源或官方来源名称",
+    "market": "底层市场基准，不等同于访问提供方",
+    "identifier": "ticker 或交易所品种代码",
+    "fetched_at": "数据抓取时间，UTC",
+    "observations": "该周实际纳入计算的交易日数量"
+  },
+  "report_rules": [
+    "不同金属的人民币绝对价格不可直接横向比较",
+    "趋势图和本周变化必须明确标注各自时间范围",
+    "事实数字只能由统一事实数据生成，禁止在模板中硬编码",
+    "数据源失败、数据过期或计算无法复现时禁止正式发布"
+  ]
+}

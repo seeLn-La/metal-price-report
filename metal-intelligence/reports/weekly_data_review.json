@@ -1,0 +1,220 @@
+{
+  "generated_at": "2026-07-18T11:26:07.637978+00:00",
+  "status": "通过",
+  "check_count": 25,
+  "passed_count": 25,
+  "checks": [
+    {
+      "name": "来源质量报告完整",
+      "status": "通过",
+      "detail": "Yahoo Finance、CNY=X 和 SHFE 官方来源均成功"
+    },
+    {
+      "name": "原始快照和指纹完整",
+      "status": "通过",
+      "detail": "本次输入均来自已固定快照，文件指纹匹配"
+    },
+    {
+      "name": "原始日线完整且数值有效",
+      "status": "通过",
+      "detail": "日期、重复、价格范围、来源和单位检查通过"
+    },
+    {
+      "name": "统一周表来源配置一致",
+      "status": "通过",
+      "detail": "来源、市场、代码和单位均与配置一致"
+    },
+    {
+      "name": "最新周四种金属齐全",
+      "status": "通过",
+      "detail": "发现 ['白银', '铜', '锡', '黄金']"
+    },
+    {
+      "name": "人民币展示单位正确",
+      "status": "通过",
+      "detail": "黄金/白银为元克，铜/锡为元吨"
+    },
+    {
+      "name": "价格为正数",
+      "status": "通过",
+      "detail": "所有统一价格均大于 0"
+    },
+    {
+      "name": "来源字段完整",
+      "status": "通过",
+      "detail": "每条周度记录都有来源和标识"
+    },
+    {
+      "name": "最新数据未过期",
+      "status": "通过",
+      "detail": "最新周末：2026-07-17，当前日期：2026-07-18，允许间隔：7天"
+    },
+    {
+      "name": "本周起止日期完整",
+      "status": "通过",
+      "detail": "本周区间：2026-07-13 至 2026-07-17"
+    },
+    {
+      "name": "统一周表可由日线重算",
+      "status": "通过",
+      "detail": "人民币换算、周聚合和涨跌结果可复现"
+    },
+    {
+      "name": "收盘价人民币换算一致",
+      "status": "通过",
+      "detail": "周末收盘价按原始收盘和汇率复算无差异"
+    },
+    {
+      "name": "周均价位于周内高低范围",
+      "status": "通过",
+      "detail": "周均价不低于周内最低且不高于周内最高"
+    },
+    {
+      "name": "锡使用官方人民币口径",
+      "status": "通过",
+      "detail": "锡价来自 SHFE 官方，未重复换汇"
+    },
+    {
+      "name": "涨跌公式一致",
+      "status": "通过",
+      "detail": "无复算差异"
+    },
+    {
+      "name": "事实型 JSON 与最新周一致",
+      "status": "通过",
+      "detail": "JSON 标记为 facts_only 且日期一致"
+    },
+    {
+      "name": "概览与价格数据口径一致",
+      "status": "通过",
+      "detail": "概览和金属分析均使用最新周周涨跌数据"
+    },
+    {
+      "name": "概览排名与周涨跌一致",
+      "status": "通过",
+      "detail": "涨幅最大和涨幅最小均由最新周数据计算"
+    },
+    {
+      "name": "摘要由事实数据生成",
+      "status": "通过",
+      "detail": "摘要可由当前事实 JSON 确定性重建"
+    },
+    {
+      "name": "驱动解读结构完整",
+      "status": "通过",
+      "detail": "每条线索都有通俗解释、影响方向、来源和限制说明"
+    },
+    {
+      "name": "驱动文字数字与周涨跌一致",
+      "status": "通过",
+      "detail": "驱动文字没有使用过期周涨跌数字"
+    },
+    {
+      "name": "趋势数据覆盖",
+      "status": "通过",
+      "detail": "覆盖周数：{'白银': 12, '铜': 12, '锡': 12, '黄金': 12}"
+    },
+    {
+      "name": "四种金属价格解读齐全",
+      "status": "通过",
+      "detail": "四种金属均有统一的价格解读结构"
+    },
+    {
+      "name": "驱动证据可追溯",
+      "status": "通过",
+      "detail": "每条影响线索都有来源、观察日期和限制说明"
+    },
+    {
+      "name": "每种金属都有明确结论",
+      "status": "通过",
+      "detail": "结论必须有正文和 supported/mixed/weak/insufficient 状态"
+    }
+  ],
+  "method": [
+    "来源质量报告和来源标识检查",
+    "原始日线日期、重复、价格范围和证据链检查",
+    "源字段和人民币单位检查",
+    "正数与完整性检查",
+    "最新数据新鲜度检查",
+    "本周起止日期检查",
+    "从日线重新计算统一周表并逐字段比对",
+    "收盘价人民币换算复算",
+    "周均价与周内高低范围检查",
+    "锡的 SHFE 官方来源检查",
+    "周涨跌公式复算",
+    "事实 JSON 日期和 facts_only 标记检查",
+    "趋势覆盖周数检查",
+    "摘要和排名与事实数据一致性检查",
+    "驱动文字数字一致性检查",
+    "驱动解读结构、证据强度和限制说明检查",
+    "四种金属价格解读完整性检查",
+    "驱动结论正文和状态检查"
+  ],
+  "input_fingerprints": [
+    {
+      "path": "data/processed/metal_prices_daily.csv",
+      "bytes": 117549,
+      "sha256": "19a0bccc4a2533fb087055f25d7a1245c77f03ef19c9588b613dbe6afdfe5896"
+    },
+    {
+      "path": "data/processed/usd_cny_daily.csv",
+      "bytes": 21447,
+      "sha256": "e76b787c5dff8ecccb338a8d280d3abaf43acaf82e95fb9a7d29c929b86399d9"
+    },
+    {
+      "path": "data/processed/shfe_tin_main_daily.csv",
+      "bytes": 58636,
+      "sha256": "62974c01089cc05a9fd565bc401cd7b0d5ec03719fc772bdfbc1861ccac24b0c"
+    },
+    {
+      "path": "data/processed/metal_prices_unified_weekly.csv",
+      "bytes": 53179,
+      "sha256": "924d3ae85311c493d9d02fb23e95399cc07d5f01aec4a1d44e4c1cea46d172ce"
+    },
+    {
+      "path": "data/processed/weekly_report.json",
+      "bytes": 12779,
+      "sha256": "dc268502a73a1971a867ffc5cd456c1b704378c3dc3584c1b143b1e2e8869540"
+    },
+    {
+      "path": "data/processed/weekly_analysis.json",
+      "bytes": 4159,
+      "sha256": "0a574e0966b69314488f0a8db4f99ee1c44194cc2aa5e9da35ce2ecf88373427"
+    },
+    {
+      "path": "data/processed/market_drivers.json",
+      "bytes": 8488,
+      "sha256": "ee59658b304833eba56b0530f85a724e9966f2648e7363fefa045eb55bf56357"
+    },
+    {
+      "path": "config/metal_sources.json",
+      "bytes": 1349,
+      "sha256": "6e3a9d16a1ae81f9b2f422444f7e84a636ef27935e19cb6b5a4e34de509a219a"
+    },
+    {
+      "path": "config/data_dictionary.json",
+      "bytes": 2551,
+      "sha256": "2c43807c07c65c9516227bf38e5b2fb7fbc36aa0c283d563305d242d4f1a5565"
+    },
+    {
+      "path": "reports/data_quality_report.json",
+      "bytes": 1912,
+      "sha256": "49551ea1e2c2ef6938b0ca435b84f1bc51af806920087cab158820c133cf07f2"
+    },
+    {
+      "path": "reports/usd_cny_quality_report.json",
+      "bytes": 256,
+      "sha256": "8f07ed38801c412e6053411734bfbea3f2efbc57b1861ff3e0d384210bba1578"
+    },
+    {
+      "path": "reports/shfe_tin_quality_report.json",
+      "bytes": 581,
+      "sha256": "e3218b2860f9aa048bbb551d98aed70fcdaca3689b36ff5e2d09f02939bfc8f8"
+    },
+    {
+      "path": "reports/latest_snapshot.json",
+      "bytes": 292,
+      "sha256": "21f5f1eac9a9360b49613190bfc27907292e56ffb1619ef0cca1f607808dda1b"
+    }
+  ]
+}
