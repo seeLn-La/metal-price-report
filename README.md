@@ -1,82 +1,111 @@
-# Metal Price Report
+# Metal Intelligence｜Metal Price Intelligence Weekly
 
-金属市场周报项目。当前正式系统目录为 `metal-intelligence/`，用于黄金、白银、铜、锡的周度价格抓取、人民币统一换算、数据真实性复核和 HTML 周报生成。
+Metal Intelligence is an automated weekly market-reporting system for gold, silver, copper, and tin.
 
-## 当前运行入口
+It collects market prices, converts them into a consistent Chinese yuan-based view, validates the underlying data, and generates a readable HTML report for people who may not have a financial background. In addition to showing price changes, the report explains why prices may have moved, how market factors are transmitted into prices, and what the available evidence cannot yet prove.
 
-```bash
-cd metal-intelligence
-python3 src/run_weekly_pipeline.py
-```
+The project is designed to make metal-price movements easier to understand without presenting uncertain market explanations as confirmed facts.
 
-如果只是内部查看尚未通过新鲜度闸门的预览：
+## What It Does
 
-```bash
-cd metal-intelligence
-python3 src/generate_weekly_html.py --allow-unverified
-```
+- Fetches daily prices for gold, silver, copper, and tin
+- Converts prices into unified RMB display units
+- Aggregates daily data into weekly market indicators
+- Validates data freshness, completeness, consistency, and source quality
+- Generates a responsive HTML weekly report
+- Provides concise price interpretations for each metal
+- Records source data snapshots and file fingerprints for traceability
+- Automatically publishes the report through GitHub Actions
+- Sends the latest report link through Bark notifications
 
-正式发布必须通过 `metal-intelligence/reports/weekly_data_review.json` 的发布闸门。当前项目暂不执行 GitHub push。
+## Price Interpretation
 
-## 目录结构
+Each weekly report includes one concise explanation for every metal. The explanation focuses on:
+
+1. What changed in price
+2. The most relevant market factors
+3. How those factors may affect prices
+4. The boundary between a reasonable explanation and an unproven conclusion
+
+The report avoids presenting a single event as the definite cause of a price movement. Instead, it distinguishes between observed facts, plausible market mechanisms, and conclusions that still require further evidence.
+
+## Data Sources
+
+- Gold: COMEX Gold Futures via Yahoo Finance (`GC=F`)
+- Silver: COMEX Silver Futures via Yahoo Finance (`SI=F`)
+- Copper: COMEX Copper Futures via Yahoo Finance (`HG=F`)
+- Tin: Shanghai Futures Exchange official data
+- Currency conversion: USD/CNY exchange-rate data
+
+Gold and silver are displayed in RMB per gram. Copper and tin are displayed in RMB per metric ton.
+
+## Data Quality and Release Gate
+
+A report is published only after passing the data-quality review process. The validation layer checks:
+
+- Data freshness and complete weekly date ranges
+- Missing values and duplicate dates
+- Non-positive or abnormal prices
+- OHLC consistency
+- Currency conversion accuracy
+- Recalculated weekly averages and price changes
+- Consistency between source data, processed data, analysis, and HTML output
+- Stale or inconsistent numerical claims in report text
+- SHA-256 fingerprints of the input files used for the report
+
+If the validation process fails, the pipeline stops and does not publish an incomplete report.
+
+## Project Structure
 
 ```text
 metal-price-report/
-├── metal-intelligence/     # 当前唯一有效的周报系统
-├── .github/                 # GitHub Actions：每周抓取、复核、发布和通知
-├── archive/legacy-monthly/  # 旧版月报系统，仅作历史归档，不参与当前运行
-├── .env                     # 本地私密配置，不提交 GitHub
-├── .gitignore               # 忽略密钥、缓存和运行快照
-└── README.md                # 当前项目总说明
+├── metal-intelligence/
+│   ├── config/          # Data sources, units, and market definitions
+│   ├── src/             # Fetching, processing, validation, and rendering
+│   ├── data/raw/        # Normalized raw market data
+│   ├── data/processed/  # Weekly data and market interpretations
+│   ├── data/snapshots/  # Input snapshots and file fingerprints
+│   ├── reports/         # Quality and release-gate reports
+│   ├── public/weekly/   # Generated HTML report
+│   ├── charts/          # Supporting price charts
+│   └── prompts/         # Optional analysis prompts
+└── .github/workflows/
+    └── weekly-report.yml
 ```
 
-## `metal-intelligence/` 内部职责
+## Running Locally
+
+```bash
+cd metal-intelligence
+python3 -m pip install -r requirements.txt
+python3 src/run_weekly_pipeline.py
+```
+
+The pipeline fetches data, builds weekly indicators, validates the results, and generates the report page.
+
+## Automated Weekly Updates
+
+GitHub Actions runs the workflow every Saturday at 10:00 AM China Standard Time. The workflow can also be triggered manually from the GitHub Actions page.
+
+The automated process:
 
 ```text
-metal-intelligence/
-├── config/                  # 数据源、市场基准、单位和计算口径
-├── src/                     # 抓取、转换、事实生成、复核和页面生成程序
-├── data/raw/                # 本次抓取得到的原始标准化日线
-├── data/processed/          # 统一人民币周表、事实 JSON 和价格解读
-├── data/snapshots/          # 每次运行的原始输入快照和 SHA-256 指纹
-├── reports/                 # 来源质量、可比性和发布闸门报告
-├── public/weekly/            # 通过闸门后生成的周报页面
-├── charts/                  # 近一年辅助趋势图
-└── prompts/                 # AI 分析提示词，仅在接入外部模型时使用
+Market data
+    ↓
+Data normalization
+    ↓
+RMB conversion and weekly aggregation
+    ↓
+Data-quality validation
+    ↓
+HTML report generation
+    ↓
+GitHub Pages deployment
+    ↓
+Bark notification
 ```
 
-### 数据链路
+## Disclaimer
 
-```text
-Yahoo Finance / SHFE 官方
-        ↓
-data/raw/
-        ↓
-人民币换算与周度聚合
-        ↓
-data/processed/
-        ↓
-数据真实性复核 + 发布闸门
-        ↓
-public/weekly/index.html
-```
+This project is intended for market information and educational analysis. It is not investment advice, does not provide trading signals, and does not claim that any single factor fully explains a price movement.
 
-### 当前数据口径
-
-| 品种 | 市场基准 | 获取方式 | 展示单位 |
-| --- | --- | --- | --- |
-| 黄金 | COMEX Gold Futures | Yahoo Finance `GC=F` | 人民币/克 |
-| 白银 | COMEX Silver Futures | Yahoo Finance `SI=F` | 人民币/克 |
-| 铜 | COMEX Copper Futures | Yahoo Finance `HG=F` | 人民币/吨 |
-| 锡 | SHFE Tin Futures | SHFE 官方 | 人民币/吨 |
-
-## `archive/legacy-monthly/`
-
-这里保存旧版月报系统的历史文件，包括旧的抓取脚本、模板、月度数据和页面。它不在当前 GitHub Actions 周报路径中，不会被当前流水线读取。保留归档是为了需要追溯旧报告或旧实现时仍然可以恢复；确认新系统长期稳定后，再单独决定是否永久删除。
-
-## GitHub 发布前检查
-
-1. 先更新数据并确认 `metal-intelligence/reports/weekly_data_review.json` 状态为 `通过`。
-2. 检查 `metal-intelligence/public/weekly/index.html` 的概览、价格卡片和价格解读是否一致。
-3. 确认 `.env` 未被加入 Git，Bark 等密钥只配置在 GitHub Actions Secrets。
-4. 本地确认后，再进行 commit 和 push。
